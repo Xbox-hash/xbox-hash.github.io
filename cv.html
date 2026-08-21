@@ -107,89 +107,101 @@
             .modules-grid { grid-template-columns: 1fr; }
         }
 
-        /* AJUSTE PARA OBTENER EXACTAMENTE 1 HOJA A4 PERFECTA AL IMPRIMIR */
+        /* CONFIGURACIÓN ESTRICTA Y ESCALADA PARA 1 ÚNICA HOJA A4 IMPRESA */
         @page {
             size: A4 portrait;
-            margin: 4mm 6mm;
+            margin: 0;
         }
 
         @media print {
-            body {
+            html, body {
+                width: 210mm !important;
+                height: 297mm !important;
+                max-height: 297mm !important;
+                overflow: hidden !important;
                 background: #ffffff !important;
                 padding: 0 !important;
                 margin: 0 !important;
                 color: #0f172a !important;
-                font-size: 10.5px !important;
+                font-size: 11px !important;
                 line-height: 1.35 !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
-            .container {
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                margin: 0 !important;
-                background: #ffffff !important;
-            }
             .btn-print { display: none !important; }
             
+            .container {
+                width: 210mm !important;
+                max-width: 210mm !important;
+                height: 297mm !important;
+                max-height: 297mm !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                background: #ffffff !important;
+                transform: scale(0.78) !important;
+                transform-origin: top center !important;
+            }
+
             header {
-                padding: 14px 20px !important;
-                gap: 16px !important;
+                padding: 18px 24px !important;
+                gap: 18px !important;
                 background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
             .profile-img-box {
-                width: 85px !important;
-                height: 85px !important;
+                width: 95px !important;
+                height: 95px !important;
             }
-            .header-text h1 { font-size: 1.6rem !important; margin-bottom: 2px !important; }
-            .header-text h2 { font-size: 0.95rem !important; margin-bottom: 6px !important; }
-            .header-title-badge { font-size: 0.68rem !important; padding: 2px 8px !important; margin-bottom: 4px !important; }
-            .contact-info { gap: 10px !important; font-size: 0.78rem !important; }
+            .header-text h1 { font-size: 1.75rem !important; margin-bottom: 2px !important; color: #ffffff !important; }
+            .header-text h2 { font-size: 1rem !important; margin-bottom: 6px !important; color: #38bdf8 !important; }
+            .header-title-badge { font-size: 0.7rem !important; padding: 2px 8px !important; margin-bottom: 4px !important; }
+            .contact-info { gap: 12px !important; font-size: 0.8rem !important; color: #cbd5e1 !important; }
+            .contact-info span, .contact-info a { color: #cbd5e1 !important; }
 
             .main-content {
                 display: grid !important;
                 grid-template-columns: 1.8fr 1fr !important;
-                gap: 15px !important;
-                padding: 14px 20px !important;
+                gap: 20px !important;
+                padding: 18px 24px !important;
             }
 
             .section-title {
-                font-size: 0.92rem !important;
-                margin-bottom: 8px !important;
-                padding-bottom: 3px !important;
+                font-size: 0.98rem !important;
+                margin-bottom: 10px !important;
+                padding-bottom: 4px !important;
             }
 
-            .experience-item { margin-bottom: 10px !important; }
-            .experience-title { font-size: 0.88rem !important; }
-            .experience-company { font-size: 0.82rem !important; }
-            .experience-date { font-size: 0.75rem !important; }
-            .experience-bullets { margin-top: 3px !important; padding-left: 12px !important; font-size: 0.78rem !important; }
-            .experience-bullets li { margin-bottom: 2px !important; }
+            .experience-item { margin-bottom: 12px !important; }
+            .experience-title { font-size: 0.92rem !important; }
+            .experience-company { font-size: 0.85rem !important; }
+            .experience-date { font-size: 0.78rem !important; }
+            .experience-bullets { margin-top: 4px !important; padding-left: 14px !important; font-size: 0.8rem !important; }
+            .experience-bullets li { margin-bottom: 3px !important; }
 
-            .modules-grid { gap: 6px !important; margin-top: 6px !important; grid-template-columns: 1fr 1fr !important; }
-            .module-box { padding: 5px 7px !important; font-size: 0.74rem !important; }
-            .module-box strong { font-size: 0.78rem !important; }
+            .modules-grid { gap: 8px !important; margin-top: 8px !important; grid-template-columns: 1fr 1fr !important; }
+            .module-box { padding: 6px 8px !important; font-size: 0.76rem !important; }
+            .module-box strong { font-size: 0.8rem !important; }
 
-            .project-card { padding: 10px 12px !important; margin-bottom: 10px !important; }
-            .project-card h3 { font-size: 0.88rem !important; margin-bottom: 4px !important; }
-            .project-narrative { font-size: 0.76rem !important; line-height: 1.35 !important; margin-bottom: 6px !important; }
-            .stack-box { padding: 6px 8px !important; font-size: 0.74rem !important; }
+            .project-card { padding: 12px 14px !important; margin-bottom: 12px !important; }
+            .project-card h3 { font-size: 0.92rem !important; margin-bottom: 4px !important; }
+            .project-narrative { font-size: 0.78rem !important; line-height: 1.4 !important; margin-bottom: 6px !important; }
+            .stack-box { padding: 7px 9px !important; font-size: 0.76rem !important; }
 
-            .skills-group { margin-bottom: 8px !important; }
-            .skills-group h4 { font-size: 0.78rem !important; margin-bottom: 3px !important; }
-            .skills-pills { gap: 3px !important; }
-            .pill { padding: 2px 6px !important; font-size: 0.72rem !important; }
+            .skills-group { margin-bottom: 10px !important; }
+            .skills-group h4 { font-size: 0.82rem !important; margin-bottom: 4px !important; }
+            .skills-pills { gap: 4px !important; }
+            .pill { padding: 3px 7px !important; font-size: 0.74rem !important; }
 
-            .edu-item { margin-bottom: 6px !important; }
-            .edu-title { font-size: 0.82rem !important; }
-            .edu-school { font-size: 0.76rem !important; }
-            .edu-date { font-size: 0.72rem !important; }
+            .edu-item { margin-bottom: 8px !important; }
+            .edu-title { font-size: 0.85rem !important; }
+            .edu-school { font-size: 0.78rem !important; }
+            .edu-date { font-size: 0.74rem !important; }
 
-            .lang-item { font-size: 0.78rem !important; margin-bottom: 3px !important; padding-bottom: 2px !important; }
+            .lang-item { font-size: 0.8rem !important; margin-bottom: 4px !important; padding-bottom: 2px !important; }
         }
     </style>
 </head>
