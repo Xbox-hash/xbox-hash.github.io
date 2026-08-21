@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nelson Tobias Parra Moreno - CV | Desarrollador Java & .NET</title>
+    <title>Hoja de Vida - Nelson Tobias Parra Moreno | Desarrollador Java & .NET</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -22,13 +22,14 @@
         body { background: var(--bg); color: var(--text); line-height: 1.6; padding: 30px 15px; }
         .container { max-width: 960px; margin: 0 auto; background: var(--card-bg); border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.07); overflow: hidden; }
 
-        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 45px 40px; display: flex; align-items: center; gap: 30px; }
+        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 45px 40px; display: flex; align-items: center; gap: 30px; position: relative; }
         
-        .profile-avatar {
-            width: 130px;
-            height: 130px;
+        .profile-img-box {
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 4px solid #38bdf8;
+            object-fit: cover;
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: #ffffff;
             display: flex;
@@ -39,10 +40,14 @@
             letter-spacing: 1px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             flex-shrink: 0;
+            overflow: hidden;
         }
+        .profile-img-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .header-text h1 { font-size: 2.3rem; margin-bottom: 6px; color: #f8fafc; font-weight: 700; letter-spacing: -0.5px; }
-        .header-text h2 { font-size: 1.25rem; font-weight: 500; color: #38bdf8; margin-bottom: 18px; }
+        .header-title-badge { display: inline-block; background: #38bdf8; color: #0f172a; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+
+        .header-text h1 { font-size: 2.3rem; margin-bottom: 4px; color: #f8fafc; font-weight: 700; letter-spacing: -0.5px; }
+        .header-text h2 { font-size: 1.2rem; font-weight: 500; color: #38bdf8; margin-bottom: 16px; }
         .contact-info { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.92rem; color: #cbd5e1; }
         .contact-info span, .contact-info a { color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s; }
         .contact-info a:hover { color: #38bdf8; }
@@ -59,6 +64,10 @@
         .experience-date { font-size: 0.85rem; color: var(--text-light); font-weight: 600; }
         .experience-bullets { padding-left: 18px; font-size: 0.93rem; color: var(--text); margin-top: 8px; }
         .experience-bullets li { margin-bottom: 6px; }
+
+        .modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+        .module-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; font-size: 0.88rem; border-left: 3px solid var(--accent); }
+        .module-box strong { color: var(--primary); display: block; font-size: 0.92rem; margin-bottom: 2px; }
 
         .project-card { background: #f8fafc; border-left: 5px solid var(--accent); padding: 18px; border-radius: 0 10px 10px 0; margin-bottom: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
         .project-card.java-card { border-left-color: var(--accent-java); }
@@ -86,6 +95,7 @@
             header { flex-direction: column; text-align: center; padding: 30px 20px; }
             .contact-info { justify-content: center; }
             .main-content { grid-template-columns: 1fr; padding: 25px 20px; }
+            .modules-grid { grid-template-columns: 1fr; }
         }
 
         /* Estilos de Impresión Profesional (A4 / PDF) */
@@ -102,48 +112,70 @@
 </head>
 <body>
 
-    <button class="btn-print" onclick="window.print()">🖨️ Imprimir CV / Guardar PDF</button>
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Hoja de Vida / PDF</button>
 
     <div class="container">
         <header>
-            <div class="profile-avatar">NP</div>
+            <div class="profile-img-box" id="profileBox">
+                <img src="profile.jpg" alt="Nelson Tobias Parra Moreno" onerror="this.remove(); document.getElementById('profileBox').innerHTML='NP';">
+            </div>
             <div class="header-text">
+                <span class="header-title-badge">Hoja de Vida Profesional</span>
                 <h1>Nelson Tobias Parra Moreno</h1>
-                <h2>Desarrollador de Software Backend (Java & C# .NET)</h2>
+                <h2>Desarrollador Backend Java & C# .NET | 1 Año de Experiencia</h2>
                 <div class="contact-info">
                     <span>📧 t9834286@gmail.com</span>
                     <span>📱 0982615140</span>
-                    <span>📍 Saltos del Guairá, Paraguay</span>
+                    <span>📍 Katueté, Paraguay</span>
                     <a href="https://github.com/xbox-hash" target="_blank">🔗 GitHub: @Xbox_hash</a>
                 </div>
             </div>
         </header>
 
         <div class="main-content">
-            <!-- Columna Izquierda: Experiencia y Proyectos -->
+            <!-- Columna Izquierda: Experiencia y Módulos Desarrollados -->
             <div class="left-col">
                 <section>
-                    <h2 class="section-title"><span class="icon">💼</span> Experiencia Profesional</h2>
+                    <h2 class="section-title"><span class="icon">💼</span> Experiencia Profesional (1 Año)</h2>
                     <div class="experience-item">
                         <div class="experience-header">
                             <div>
                                 <span class="experience-title">Desarrollador de Software / Analista de TI</span>
                                 <span class="experience-company">Sisprime Sistemas</span>
                             </div>
-                            <span class="experience-date">Jun 2025 – Presente</span>
+                            <span class="experience-date">Jun 2025 – Presente (1 Año)</span>
                         </div>
                         <ul class="experience-bullets">
-                            <li>Desarrollo, mantenimiento y refactorización de módulos ERP utilizando <strong>C#, .NET y bases de datos relacionales</strong>.</li>
-                            <li>Construcción de interfaces dinámicas implementando <strong>ASP.NET Core Razor Pages</strong>.</li>
-                            <li>Desarrollo de la lógica de negocio para el módulo financiero de préstamos (desembolsos, pagos e integración con caja).</li>
-                            <li>Creación desde cero del módulo de Órdenes de Servicio e integración de migración de datos históricos.</li>
-                            <li>Colaboración en el sistema agrícola (SISAGRO) y optimización de los módulos de Caja y POS.</li>
+                            <li>Desarrollo, mantenimiento y refactorización de módulos ERP empresariales utilizando <strong>C#, .NET y bases de datos relacionales</strong>.</li>
+                            <li>Construcción de vistas e interfaces dinámicas utilizando <strong>ASP.NET Core Razor Pages</strong>.</li>
+                            <li>Implementación de buenas prácticas de programación, optimización de consultas SQL y documentación.</li>
                         </ul>
+
+                        <!-- Varios Módulos Desarrollados -->
+                        <h4 style="margin-top: 15px; font-size: 0.95rem; color: var(--primary);">Módulos Desarrollados & Implementados:</h4>
+                        <div class="modules-grid">
+                            <div class="module-box">
+                                <strong>💳 Módulo Préstamos & Financiero</strong>
+                                Lógica de desembolsos, planes de pagos e integración transaccional con caja.
+                            </div>
+                            <div class="module-box">
+                                <strong>📋 Módulo Órdenes de Servicio</strong>
+                                Diseño desde cero e importación masiva de datos históricos sin afectar stock.
+                            </div>
+                            <div class="module-box">
+                                <strong>🛒 Módulo Caja & POS (Ventas)</strong>
+                                Modernización y reescritura de código legado para optimizar rendimiento.
+                            </div>
+                            <div class="module-box">
+                                <strong>🌾 Módulo Agrícola (SISAGRO)</strong>
+                                Automatización de cálculos complejos y reporte de procesos del sector agrícola.
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <section>
-                    <h2 class="section-title"><span class="icon">🚀</span> Proyectos</h2>
+                <section style="margin-top: 25px;">
+                    <h2 class="section-title"><span class="icon">🚀</span> Proyectos Destacados</h2>
                     
                     <!-- Proyecto Java CTS -->
                     <div class="project-card java-card">
@@ -216,7 +248,7 @@
                     <h2 class="section-title"><span class="icon">🎓</span> Educación</h2>
                     <div class="edu-item">
                         <div class="edu-title">Licenciatura en Análisis de Sistemas</div>
-                        <div class="edu-school">Universidad Nacional de Canindeyú</div>
+                        <div class="edu-school">Universidad Nacional de Canindeyú (Katueté)</div>
                         <div class="edu-date">Feb 2022 – Presente</div>
                     </div>
                 </section>
