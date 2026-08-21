@@ -19,14 +19,14 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.6; padding: 30px 15px; }
+        body { background: var(--bg); color: var(--text); line-height: 1.5; padding: 30px 15px; }
         .container { max-width: 960px; margin: 0 auto; background: var(--card-bg); border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.07); overflow: hidden; }
 
-        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 45px 40px; display: flex; align-items: center; gap: 30px; position: relative; }
+        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 35px 35px; display: flex; align-items: center; gap: 25px; position: relative; }
         
         .profile-img-box {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             border: 4px solid #38bdf8;
             object-fit: cover;
@@ -44,58 +44,58 @@
         }
         .profile-img-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .header-title-badge { display: inline-block; background: #38bdf8; color: #0f172a; font-size: 0.85rem; font-weight: 800; padding: 4px 14px; border-radius: 12px; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1.5px; box-shadow: 0 2px 8px rgba(56,189,248,0.4); }
+        .header-title-badge { display: inline-block; background: #38bdf8; color: #0f172a; font-size: 0.8rem; font-weight: 800; padding: 3px 12px; border-radius: 12px; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1.5px; box-shadow: 0 2px 8px rgba(56,189,248,0.4); }
 
-        .header-text h1 { font-size: 2.4rem; margin-bottom: 4px; color: #f8fafc; font-weight: 700; letter-spacing: -0.5px; }
-        .header-text h2 { font-size: 1.25rem; font-weight: 600; color: #38bdf8; margin-bottom: 16px; }
-        .contact-info { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.92rem; color: #cbd5e1; }
-        .contact-info span, .contact-info a { color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s; }
+        .header-text h1 { font-size: 2.2rem; margin-bottom: 3px; color: #f8fafc; font-weight: 700; letter-spacing: -0.5px; }
+        .header-text h2 { font-size: 1.15rem; font-weight: 600; color: #38bdf8; margin-bottom: 12px; }
+        .contact-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #cbd5e1; }
+        .contact-info span, .contact-info a { color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
         .contact-info a:hover { color: #38bdf8; }
 
-        .main-content { display: grid; grid-template-columns: 1.8fr 1fr; gap: 35px; padding: 40px; }
+        .main-content { display: grid; grid-template-columns: 1.85fr 1fr; gap: 30px; padding: 35px; }
         
-        .section-title { font-size: 1.2rem; color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+        .section-title { font-size: 1.15rem; color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
 
-        .experience-item { margin-bottom: 25px; }
-        .experience-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
-        .experience-title { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        .experience-item { margin-bottom: 20px; }
+        .experience-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; flex-wrap: wrap; }
+        .experience-title { font-size: 1.05rem; font-weight: 700; color: var(--primary); }
         .experience-company { font-weight: 600; color: var(--accent); display: block; }
-        .experience-date { font-size: 0.85rem; color: var(--text-light); font-weight: 600; }
-        .experience-bullets { padding-left: 18px; font-size: 0.93rem; color: var(--text); margin-top: 8px; }
-        .experience-bullets li { margin-bottom: 6px; }
+        .experience-date { font-size: 0.82rem; color: var(--text-light); font-weight: 600; }
+        .experience-bullets { padding-left: 16px; font-size: 0.88rem; color: var(--text); margin-top: 6px; }
+        .experience-bullets li { margin-bottom: 4px; }
 
-        .modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-        .module-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; font-size: 0.88rem; border-left: 3px solid var(--accent); }
-        .module-box strong { color: var(--primary); display: block; font-size: 0.92rem; margin-bottom: 2px; }
+        .modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .module-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px; font-size: 0.84rem; border-left: 3px solid var(--accent); }
+        .module-box strong { color: var(--primary); display: block; font-size: 0.88rem; margin-bottom: 2px; }
 
-        .project-card { background: #f8fafc; border-left: 5px solid var(--accent); padding: 20px; border-radius: 0 10px 10px 0; margin-bottom: 22px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .project-card { background: #f8fafc; border-left: 4px solid var(--accent); padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
         .project-card.java-card { border-left-color: var(--accent-java); }
         .project-card.net-card { border-left-color: var(--accent-net); }
-        .project-card h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+        .project-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
         
-        .status-badge { font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .status-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
         .status-freelance { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
         .status-upcoming { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
 
-        .project-narrative { font-size: 0.92rem; color: #334155; line-height: 1.65; margin-bottom: 12px; }
+        .project-narrative { font-size: 0.88rem; color: #334155; line-height: 1.55; margin-bottom: 10px; }
         .project-narrative strong { color: var(--primary); }
 
-        .stack-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; font-size: 0.88rem; color: #334155; }
+        .stack-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; font-size: 0.84rem; color: #334155; }
         .stack-box strong { color: var(--primary); }
 
-        .skills-group { margin-bottom: 20px; }
-        .skills-group h4 { font-size: 0.95rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-        .skills-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-        .pill { background: #e2e8f0; color: var(--secondary); padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
+        .skills-group { margin-bottom: 16px; }
+        .skills-group h4 { font-size: 0.9rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .skills-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+        .pill { background: #e2e8f0; color: var(--secondary); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
         .pill-highlight { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
         .pill-ai { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
 
-        .edu-item { margin-bottom: 15px; }
-        .edu-title { font-weight: 700; color: var(--primary); font-size: 0.98rem; }
-        .edu-school { font-size: 0.9rem; color: var(--text-light); }
-        .edu-date { font-size: 0.82rem; color: var(--accent); font-weight: 600; }
+        .edu-item { margin-bottom: 12px; }
+        .edu-title { font-weight: 700; color: var(--primary); font-size: 0.92rem; }
+        .edu-school { font-size: 0.85rem; color: var(--text-light); }
+        .edu-date { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
 
-        .lang-item { display: flex; justify-content: space-between; font-size: 0.92rem; margin-bottom: 8px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 4px; }
+        .lang-item { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 6px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 3px; }
 
         .btn-print { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white; padding: 16px 32px; border-radius: 50px; border: none; cursor: pointer; font-weight: 700; font-size: 1rem; box-shadow: 0 10px 25px rgba(37,99,235,0.4); display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; z-index: 1000; text-decoration: none; }
         .btn-print:hover { transform: translateY(-2px); background: #1d4ed8; }
@@ -107,15 +107,65 @@
             .modules-grid { grid-template-columns: 1fr; }
         }
 
-        /* Estilos de Impresión Profesional (A4 / PDF) */
+        /* CONFIGURACIÓN EXACTA DE IMPRESIÓN EN FORMATO HOJA A4 */
+        @page {
+            size: A4 portrait;
+            margin: 8mm 10mm;
+        }
+
         @media print {
-            body { background: white; padding: 0; color: #000; }
-            .container { box-shadow: none; border-radius: 0; max-width: 100%; width: 100%; }
-            .btn-print { display: none !important; }
-            header { padding: 30px 30px 20px 30px; background: #0f172a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .main-content { padding: 25px 30px; gap: 25px; }
-            .project-card, header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .project-card { break-inside: avoid; page-break-inside: avoid; }
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                color: #0f172a !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .container {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                background: #ffffff !important;
+            }
+            .btn-print {
+                display: none !important;
+            }
+            header {
+                padding: 25px 30px !important;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .header-text h1 { color: #ffffff !important; }
+            .header-text h2 { color: #38bdf8 !important; }
+            .contact-info span, .contact-info a { color: #cbd5e1 !important; }
+            
+            /* Mantener la estructura exacta de 2 columnas al imprimir */
+            .main-content {
+                display: grid !important;
+                grid-template-columns: 1.85fr 1fr !important;
+                gap: 25px !important;
+                padding: 25px 30px !important;
+            }
+            .modules-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+            }
+            .project-card, .module-box, .experience-item, .skills-group, .edu-item {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .pill, .pill-highlight, .pill-ai, .status-badge, .stack-box {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
     </style>
 </head>
@@ -163,7 +213,7 @@
                         </ul>
 
                         <!-- Varios Módulos Desarrollados -->
-                        <h4 style="margin-top: 15px; font-size: 0.95rem; color: var(--primary);">Módulos Desarrollados & Implementados:</h4>
+                        <h4 style="margin-top: 12px; font-size: 0.92rem; color: var(--primary);">Módulos Desarrollados & Implementados:</h4>
                         <div class="modules-grid">
                             <div class="module-box">
                                 <strong>Módulo Préstamos & Financiero</strong>
@@ -185,7 +235,7 @@
                     </div>
                 </section>
 
-                <section style="margin-top: 25px;">
+                <section style="margin-top: 20px;">
                     <h2 class="section-title">Proyectos Destacados</h2>
                     
                     <!-- Proyecto Java CTS -->
@@ -288,7 +338,7 @@
                     </div>
                 </section>
 
-                <section style="margin-top: 25px;">
+                <section style="margin-top: 20px;">
                     <h2 class="section-title">Educación</h2>
                     <div class="edu-item">
                         <div class="edu-title">Licenciatura en Análisis de Sistemas</div>
@@ -297,7 +347,7 @@
                     </div>
                 </section>
 
-                <section style="margin-top: 25px;">
+                <section style="margin-top: 20px;">
                     <h2 class="section-title">Idiomas</h2>
                     <div class="lang-item"><span>Español</span> <strong>Nativo</strong></div>
                     <div class="lang-item"><span>Guaraní</span> <strong>Nativo</strong></div>
