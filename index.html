@@ -54,8 +54,7 @@
 
         .main-content { display: grid; grid-template-columns: 1.8fr 1fr; gap: 35px; padding: 40px; }
         
-        .section-title { font-size: 1.2rem; color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .section-title span.icon { color: var(--accent); font-weight: normal; }
+        .section-title { font-size: 1.2rem; color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
 
         .experience-item { margin-bottom: 25px; }
         .experience-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
@@ -122,7 +121,7 @@
 </head>
 <body>
 
-    <button class="btn-print" onclick="window.print()">🖨️ Imprimir Curriculum Vitae / PDF</button>
+    <button class="btn-print" onclick="window.print()">Imprimir Curriculum Vitae / PDF</button>
 
     <div class="container">
         <header>
@@ -134,10 +133,10 @@
                 <h1>Nelson Tobias Parra Moreno</h1>
                 <h2>Desarrollador Full Stack (Java & C# .NET) | 1 Año de Experiencia</h2>
                 <div class="contact-info">
-                    <span>📧 t9834286@gmail.com</span>
-                    <span>📱 0982615140</span>
-                    <span>📍 Katueté, Paraguay</span>
-                    <a href="https://github.com/xbox-hash" target="_blank">🔗 GitHub: @Xbox_hash</a>
+                    <span>Email: t9834286@gmail.com</span>
+                    <span>Teléfono: 0982615140</span>
+                    <span>Ubicación: Katueté, Paraguay</span>
+                    <a href="https://github.com/xbox-hash" target="_blank">GitHub: @Xbox_hash</a>
                 </div>
             </div>
         </header>
@@ -146,7 +145,7 @@
             <!-- Columna Izquierda: Experiencia y Módulos Desarrollados -->
             <div class="left-col">
                 <section>
-                    <h2 class="section-title"><span class="icon">💼</span> Experiencia Profesional (1 Año)</h2>
+                    <h2 class="section-title">Experiencia Profesional (1 Año)</h2>
                     <div class="experience-item">
                         <div class="experience-header">
                             <div>
@@ -157,29 +156,29 @@
                         </div>
                         <ul class="experience-bullets">
                             <li>Desarrollo Full Stack, mantenimiento y refactorización de módulos ERP empresariales utilizando <strong>C#, .NET, patrón MVC y bases de datos relacionales</strong>.</li>
-                            <li>Construcción de vistas dinámicas e interfaces responsivas implementando <strong>ASP.NET Core Razor Pages / MVC</strong>.</li>
                             <li>Integración de <strong>herramientas de Inteligencia Artificial (Antigravity, Claude Code)</strong> en el flujo de trabajo diario para acelerar la generación, optimización y revisión de código.</li>
                             <li>Aplicación de <strong>Clean Architecture, Principios SOLID y buenas prácticas de código limpio (Clean Code)</strong>.</li>
                             <li>Trabajo colaborativo mediante metodologías ágiles (<strong>Scrum / Kanban</strong>).</li>
+                            <li>Construcción de vistas e interfaces dinámicas utilizando <strong>ASP.NET Core Razor Pages / MVC</strong>.</li>
                         </ul>
 
                         <!-- Varios Módulos Desarrollados -->
                         <h4 style="margin-top: 15px; font-size: 0.95rem; color: var(--primary);">Módulos Desarrollados & Implementados:</h4>
                         <div class="modules-grid">
                             <div class="module-box">
-                                <strong>💳 Módulo Préstamos & Financiero</strong>
+                                <strong>Módulo Préstamos & Financiero</strong>
                                 Lógica de desembolsos, planes de pagos e integración transaccional con caja.
                             </div>
                             <div class="module-box">
-                                <strong>📋 Módulo Órdenes de Servicio</strong>
+                                <strong>Módulo Órdenes de Servicio</strong>
                                 Diseño desde cero e importación masiva de datos históricos sin afectar stock.
                             </div>
                             <div class="module-box">
-                                <strong>🛒 Módulo Caja & POS (Ventas)</strong>
+                                <strong>Módulo Caja & POS (Ventas)</strong>
                                 Modernización y reescritura de código legado para optimizar rendimiento.
                             </div>
                             <div class="module-box">
-                                <strong>🌾 Módulo Agrícola (SISAGRO)</strong>
+                                <strong>Módulo Agrícola (SISAGRO)</strong>
                                 Automatización de cálculos complejos y reporte de procesos del sector agrícola.
                             </div>
                         </div>
@@ -187,11 +186,11 @@
                 </section>
 
                 <section style="margin-top: 25px;">
-                    <h2 class="section-title"><span class="icon">🚀</span> Proyectos Destacados</h2>
+                    <h2 class="section-title">Proyectos Destacados</h2>
                     
                     <!-- Proyecto Java CTS -->
                     <div class="project-card java-card">
-                        <h3>Cash Transactions System (CTS) ☕ <span class="status-badge status-upcoming">🚀 Próximamente en Producción</span></h3>
+                        <h3>Cash Transactions System (CTS) <span class="status-badge status-upcoming">Próximamente en Producción</span></h3>
                         <p class="project-narrative">
                             Sistema transaccional para control centralizado de caja, arqueo financiero y gestión de comisiones por servicios.
                             Fue desarrollado utilizando el lenguaje <strong>Java 21</strong> y el framework <strong>Spring Boot 3.3</strong>, estructurado bajo una arquitectura híbrida de <strong>APIs RESTful y el patrón MVC</strong>. La persistencia y mapeo relacional se maneja con <strong>Spring Data JPA e Hibernate</strong> sobre una base de datos <strong>PostgreSQL</strong>.
@@ -204,7 +203,7 @@
 
                     <!-- Proyecto C# .NET Sistema Agroganadero -->
                     <div class="project-card net-card">
-                        <h3>ERP Ganadero (Sistema Agroganadero) 🟣 <span class="status-badge status-freelance">💼 Proyecto Freelance</span></h3>
+                        <h3>ERP Ganadero (Sistema Agroganadero) <span class="status-badge status-freelance">Proyecto Freelance</span></h3>
                         <p class="project-narrative">
                             Aplicación web empresarial para la administración operativa, ganadera y control de stock.
                             Fue desarrollado en la modalidad <strong>Freelance / Particular</strong> utilizando el lenguaje <strong>C#</strong> sobre la plataforma <strong>.NET 8.0</strong>, estructurado bajo el <strong>patrón arquitectónico MVC (Model-View-Controller)</strong> y vistas dinámicas con <strong>Razor Pages</strong>.
@@ -220,10 +219,10 @@
             <!-- Columna Derecha: Stack, Educación e Idiomas -->
             <div class="right-col">
                 <section>
-                    <h2 class="section-title"><span class="icon">🛠️</span> Habilidades Técnicas</h2>
+                    <h2 class="section-title">Habilidades Técnicas</h2>
                     
                     <div class="skills-group">
-                        <h4>🤖 Herramientas de IA</h4>
+                        <h4>Herramientas de IA</h4>
                         <div class="skills-pills">
                             <span class="pill pill-ai">Antigravity</span>
                             <span class="pill pill-ai">Claude Code</span>
@@ -233,7 +232,7 @@
                     </div>
 
                     <div class="skills-group">
-                        <h4>📐 Metodologías & Arquitectura</h4>
+                        <h4>Metodologías & Arquitectura</h4>
                         <div class="skills-pills">
                             <span class="pill pill-highlight">Patrón MVC</span>
                             <span class="pill pill-highlight">APIs RESTful</span>
@@ -246,7 +245,7 @@
                     </div>
 
                     <div class="skills-group">
-                        <h4>☕ Java</h4>
+                        <h4>Java</h4>
                         <div class="skills-pills">
                             <span class="pill">Java 21</span>
                             <span class="pill">Spring Boot 3</span>
@@ -258,7 +257,7 @@
                     </div>
 
                     <div class="skills-group">
-                        <h4>🟣 C# .NET</h4>
+                        <h4>C# .NET</h4>
                         <div class="skills-pills">
                             <span class="pill">C# 12</span>
                             <span class="pill">.NET 8.0</span>
@@ -269,7 +268,7 @@
                     </div>
 
                     <div class="skills-group">
-                        <h4>🛢️ Bases de Datos</h4>
+                        <h4>Bases de Datos</h4>
                         <div class="skills-pills">
                             <span class="pill">PostgreSQL</span>
                             <span class="pill">SQL Server</span>
@@ -278,7 +277,7 @@
                     </div>
 
                     <div class="skills-group">
-                        <h4>⚙️ Herramientas & Cloud</h4>
+                        <h4>Herramientas & Cloud</h4>
                         <div class="skills-pills">
                             <span class="pill">Oracle Cloud</span>
                             <span class="pill">Docker</span>
@@ -290,7 +289,7 @@
                 </section>
 
                 <section style="margin-top: 25px;">
-                    <h2 class="section-title"><span class="icon">🎓</span> Educación</h2>
+                    <h2 class="section-title">Educación</h2>
                     <div class="edu-item">
                         <div class="edu-title">Licenciatura en Análisis de Sistemas</div>
                         <div class="edu-school">Universidad Nacional de Canindeyú (Katueté)</div>
@@ -299,7 +298,7 @@
                 </section>
 
                 <section style="margin-top: 25px;">
-                    <h2 class="section-title"><span class="icon">🌐</span> Idiomas</h2>
+                    <h2 class="section-title">Idiomas</h2>
                     <div class="lang-item"><span>Español</span> <strong>Nativo</strong></div>
                     <div class="lang-item"><span>Guaraní</span> <strong>Nativo</strong></div>
                     <div class="lang-item"><span>Portugués</span> <strong>Avanzado</strong></div>
