@@ -3,29 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Nelson Tobias Parra Moreno | Desarrollador Full Stack C# .NET</title>
+    <title>Nelson Tobias Parra Moreno | Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #0f172a;
             --secondary: #1e293b;
-            --accent: #2563eb;
-            --accent-net: #0284c7;
+            --net-color: #0284c7;
+            --net-gradient: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            --java-color: #ea580c;
+            --java-gradient: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
             --text: #334155;
             --text-light: #64748b;
-            --bg: #f1f5f9;
+            --bg: #f8fafc;
             --card-bg: #ffffff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.5; padding: 30px 15px; }
+        body { background: var(--bg); color: var(--text); line-height: 1.5; padding: 40px 15px; min-height: 100vh; }
+        
+        .selector-nav {
+            max-width: 960px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .switch-tabs {
+            display: flex;
+            background: #f1f5f9;
+            padding: 4px;
+            border-radius: 10px;
+            gap: 4px;
+        }
+
+        .tab-btn {
+            padding: 8px 18px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            background: transparent;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .tab-btn.active-net {
+            background: #ffffff;
+            color: var(--net-color);
+            box-shadow: 0 2px 8px rgba(2,132,199,0.15);
+        }
+
+        .tab-btn.active-java {
+            background: #ffffff;
+            color: var(--java-color);
+            box-shadow: 0 2px 8px rgba(234,88,12,0.15);
+        }
+
         .container { max-width: 960px; margin: 0 auto; background: var(--card-bg); border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.07); overflow: hidden; }
 
         header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 35px 35px; display: flex; align-items: center; gap: 25px; position: relative; }
         
         .profile-img-box {
-            width: 130px;
-            height: 130px;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
             border: 4px solid #38bdf8;
             object-fit: cover;
@@ -36,14 +97,14 @@
             justify-content: center;
             font-size: 2.8rem;
             font-weight: 700;
-            letter-spacing: 1px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             flex-shrink: 0;
             overflow: hidden;
+            transition: border-color 0.3s;
         }
         .profile-img-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        .header-title-badge { display: inline-block; background: #38bdf8; color: #0f172a; font-size: 0.8rem; font-weight: 800; padding: 3px 12px; border-radius: 12px; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1.5px; box-shadow: 0 2px 8px rgba(56,189,248,0.4); }
+        .header-title-badge { display: inline-block; background: #38bdf8; color: #0f172a; font-size: 0.8rem; font-weight: 800; padding: 3px 12px; border-radius: 12px; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1.5px; }
 
         .header-text h1 { font-size: 2.2rem; margin-bottom: 3px; color: #f8fafc; font-weight: 700; letter-spacing: -0.5px; }
         .header-text h2 { font-size: 1.15rem; font-weight: 600; color: #38bdf8; margin-bottom: 12px; }
@@ -58,17 +119,16 @@
         .experience-item { margin-bottom: 20px; }
         .experience-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; flex-wrap: wrap; }
         .experience-title { font-size: 1.05rem; font-weight: 700; color: var(--primary); }
-        .experience-company { font-weight: 600; color: var(--accent); display: block; }
+        .experience-company { font-weight: 600; color: var(--net-color); display: block; }
         .experience-date { font-size: 0.82rem; color: var(--text-light); font-weight: 600; }
         .experience-bullets { padding-left: 16px; font-size: 0.88rem; color: var(--text); margin-top: 6px; }
         .experience-bullets li { margin-bottom: 4px; }
 
         .modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .module-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px; font-size: 0.84rem; border-left: 3px solid var(--accent); }
+        .module-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px; font-size: 0.84rem; border-left: 3px solid var(--net-color); }
         .module-box strong { color: var(--primary); display: block; font-size: 0.88rem; margin-bottom: 2px; }
 
-        .project-card { background: #f8fafc; border-left: 4px solid var(--accent); padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .project-card.net-card { border-left-color: var(--accent-net); }
+        .project-card { background: #f8fafc; border-left: 4px solid var(--net-color); padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
         .project-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
         
         .status-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -90,296 +150,307 @@
         .edu-item { margin-bottom: 12px; }
         .edu-title { font-weight: 700; color: var(--primary); font-size: 0.92rem; }
         .edu-school { font-size: 0.85rem; color: var(--text-light); }
-        .edu-date { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+        .edu-date { font-size: 0.8rem; color: var(--net-color); font-weight: 600; }
 
         .lang-item { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 6px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 3px; }
 
-        .btn-print { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white; padding: 16px 32px; border-radius: 50px; border: none; cursor: pointer; font-weight: 700; font-size: 1rem; box-shadow: 0 10px 25px rgba(37,99,235,0.4); display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; z-index: 1000; text-decoration: none; }
-        .btn-print:hover { transform: translateY(-2px); background: #1d4ed8; }
+        .btn-print { position: fixed; bottom: 30px; right: 30px; background: #0f172a; color: white; padding: 14px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(15,23,42,0.3); display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; z-index: 1000; text-decoration: none; }
+        .btn-print:hover { transform: translateY(-2px); background: #1e293b; }
 
         @media (max-width: 768px) {
+            .selector-nav { flex-direction: column; gap: 12px; text-align: center; }
             header { flex-direction: column; text-align: center; padding: 30px 20px; }
             .contact-info { justify-content: center; }
             .main-content { grid-template-columns: 1fr; padding: 25px 20px; }
             .modules-grid { grid-template-columns: 1fr; }
         }
 
-        /* CONFIGURACIÓN COMPACTA ULTRAPRECISA PARA 1 SOLA HOJA IMPRESA EN CUALQUIER NAVEGADOR */
-        @page {
-            size: A4 portrait;
-            margin: 5mm;
-        }
-
+        @page { size: A4 portrait; margin: 5mm; }
         @media print {
-            body {
-                background: #ffffff !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                color: #0f172a !important;
-                font-size: 9.5px !important;
-                line-height: 1.3 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .btn-print { display: none !important; }
-
-            .container {
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                background: #ffffff !important;
-            }
-
-            header {
-                padding: 12px 20px !important;
-                gap: 15px !important;
-                background: #0f172a !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .profile-img-box {
-                width: 75px !important;
-                height: 75px !important;
-                border-width: 3px !important;
-            }
-
+            body { background: #ffffff !important; padding: 0 !important; margin: 0 !important; color: #0f172a !important; font-size: 9.5px !important; line-height: 1.3 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .selector-nav, .btn-print { display: none !important; }
+            .container { box-shadow: none !important; border-radius: 0 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; background: #ffffff !important; }
+            header { padding: 12px 20px !important; gap: 15px !important; background: #0f172a !important; }
+            .profile-img-box { width: 75px !important; height: 75px !important; border-width: 3px !important; }
             .header-text h1 { font-size: 1.45rem !important; margin-bottom: 2px !important; color: #ffffff !important; }
-            .header-text h2 { font-size: 0.88rem !important; margin-bottom: 4px !important; color: #38bdf8 !important; }
+            .header-text h2 { font-size: 0.88rem !important; margin-bottom: 4px !important; }
             .header-title-badge { font-size: 0.65rem !important; padding: 2px 6px !important; margin-bottom: 2px !important; }
             .contact-info { gap: 10px !important; font-size: 0.75rem !important; color: #cbd5e1 !important; }
-
-            .main-content {
-                display: grid !important;
-                grid-template-columns: 1.8fr 1fr !important;
-                gap: 12px !important;
-                padding: 12px 18px !important;
-            }
-
-            .section-title {
-                font-size: 0.85rem !important;
-                margin-bottom: 6px !important;
-                padding-bottom: 2px !important;
-            }
-
+            .main-content { display: grid !important; grid-template-columns: 1.8fr 1fr !important; gap: 12px !important; padding: 12px 18px !important; }
+            .section-title { font-size: 0.85rem !important; margin-bottom: 6px !important; padding-bottom: 2px !important; }
             .experience-item { margin-bottom: 6px !important; }
             .experience-title { font-size: 0.82rem !important; }
             .experience-company { font-size: 0.78rem !important; }
             .experience-date { font-size: 0.72rem !important; }
             .experience-bullets { margin-top: 2px !important; padding-left: 12px !important; font-size: 0.75rem !important; }
             .experience-bullets li { margin-bottom: 2px !important; }
-
             .modules-grid { gap: 4px !important; margin-top: 4px !important; grid-template-columns: 1fr 1fr !important; }
             .module-box { padding: 4px 6px !important; font-size: 0.72rem !important; }
             .module-box strong { font-size: 0.75rem !important; margin-bottom: 1px !important; }
-
             .project-card { padding: 8px 10px !important; margin-bottom: 8px !important; }
             .project-card h3 { font-size: 0.82rem !important; margin-bottom: 3px !important; }
             .project-narrative { font-size: 0.73rem !important; line-height: 1.3 !important; margin-bottom: 4px !important; }
             .stack-box { padding: 4px 6px !important; font-size: 0.72rem !important; }
-
             .skills-group { margin-bottom: 6px !important; }
             .skills-group h4 { font-size: 0.75rem !important; margin-bottom: 2px !important; }
             .skills-pills { gap: 2px !important; }
             .pill { padding: 1px 5px !important; font-size: 0.70rem !important; }
-
             .edu-item { margin-bottom: 4px !important; }
             .edu-title { font-size: 0.78rem !important; }
             .edu-school { font-size: 0.72rem !important; }
             .edu-date { font-size: 0.68rem !important; }
-
             .lang-item { font-size: 0.75rem !important; margin-bottom: 2px !important; padding-bottom: 1px !important; }
         }
     </style>
 </head>
 <body>
 
-    <button class="btn-print" onclick="window.print()">Imprimir Curriculum Vitae / PDF</button>
-
-    <div class="container">
-        <header>
-            <div class="profile-img-box" id="profileBox">
-                <img src="profile.jpg" alt="Nelson Tobias Parra Moreno" onerror="this.remove(); document.getElementById('profileBox').innerHTML='NP';">
-            </div>
-            <div class="header-text">
-                <span class="header-title-badge">Curriculum Vitae</span>
-                <h1>Nelson Tobias Parra Moreno</h1>
-                <h2>Desarrollador Full Stack C# .NET | 1 Año de Experiencia</h2>
-                <div class="contact-info">
-                    <span>Email: nelsontobiasparramoreno745@gmail.com</span>
-                    <span>Teléfono: 0982615140</span>
-                    <span>Ubicación: Katueté, Paraguay</span>
-                    <a href="https://github.com/xbox-hash" target="_blank">GitHub: @Xbox_hash</a>
-                    <a href="https://www.linkedin.com/in/tobias-parra-moreno-074083357" target="_blank">LinkedIn: Tobias Parra</a>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <!-- Columna Izquierda: Experiencia y Módulos Desarrollados -->
-            <div class="left-col">
-                <section>
-                    <h2 class="section-title">Experiencia Profesional (1 Año)</h2>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="experience-title">Desarrollador Full Stack C# .NET</span>
-                                <span class="experience-company">Sisprime Sistemas</span>
-                            </div>
-                            <span class="experience-date">Jun 2025 – Presente (1 Año)</span>
-                        </div>
-                        <ul class="experience-bullets">
-                            <li>Desarrollo Full Stack, mantenimiento y refactorización de módulos ERP empresariales utilizando <strong>C#, .NET 8, patrón MVC y bases de datos relacionales (SQL Server, PostgreSQL)</strong>.</li>
-                            <li>Integración de <strong>herramientas de Inteligencia Artificial (Antigravity, Claude Code)</strong> en el flujo de trabajo diario para acelerar la generación, optimización y revisión de código.</li>
-                            <li>Aplicación de <strong>Clean Architecture, Principios SOLID y buenas prácticas de código limpio (Clean Code)</strong>.</li>
-                            <li>Trabajo colaborativo mediante metodologías ágiles (<strong>Scrum / Kanban</strong>).</li>
-                            <li>Construcción de vistas e interfaces dinámicas utilizando <strong>ASP.NET Core Razor Pages / MVC</strong> y desarrollo de <strong>APIs RESTful</strong>.</li>
-                        </ul>
-
-                        <!-- Varios Módulos Desarrollados -->
-                        <h4 style="margin-top: 10px; font-size: 0.88rem; color: var(--primary);">Módulos Desarrollados & Implementados:</h4>
-                        <div class="modules-grid">
-                            <div class="module-box">
-                                <strong>Módulo Préstamos & Financiero</strong>
-                                Lógica de desembolsos, planes de pagos e integración transaccional con caja.
-                            </div>
-                            <div class="module-box">
-                                <strong>Módulo Órdenes de Servicio</strong>
-                                Diseño desde cero e importación masiva de datos históricos sin afectar stock.
-                            </div>
-                            <div class="module-box">
-                                <strong>Módulo Caja & POS (Ventas)</strong>
-                                Modernización y reescritura de código legado para optimizar rendimiento.
-                            </div>
-                            <div class="module-box">
-                                <strong>Módulo Agrícola (SISAGRO)</strong>
-                                Automatización de cálculos complejos y reporte de procesos del sector agrícola.
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section style="margin-top: 14px;">
-                    <h2 class="section-title">Proyecto Destacado (.NET)</h2>
-
-                    <!-- Proyecto C# .NET Sistema Agroganadero -->
-                    <div class="project-card net-card">
-                        <h3>ERP Ganadero (Sistema Agroganadero) <span class="status-badge status-freelance">Proyecto Freelance</span></h3>
-                        <p class="project-narrative">
-                            Aplicación web empresarial para la administración operativa, ganadera y control de stock.
-                            Desarrollado en modalidad <strong>Freelance / Particular</strong> utilizando <strong>C#</strong> sobre <strong>.NET 8.0</strong>, estructurado bajo el <strong>patrón arquitectónico MVC (Model-View-Controller)</strong> y vistas dinámicas con <strong>Razor Pages</strong>.
-                            Gestión de datos con <strong>Entity Framework Core 8</strong> en <strong>SQL Server</strong>, diseño responsivo con <strong>Bootstrap (SB Admin 2)</strong> e integración de la librería <strong>QuestPDF</strong> para la emisión de reportes ejecutivos.
-                        </p>
-                        <div class="stack-box">
-                            <strong>Stack Principal:</strong> C# 12, .NET 8.0, Patrón MVC, Razor Pages, Entity Framework Core 8, SQL Server, QuestPDF, Bootstrap.
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Columna Derecha: Stack, Educación e Idiomas -->
-            <div class="right-col">
-                <section>
-                    <h2 class="section-title">Habilidades Técnicas</h2>
-                    
-                    <div class="skills-group">
-                        <h4>Especialidad C# .NET</h4>
-                        <div class="skills-pills">
-                            <span class="pill pill-highlight">C# 12</span>
-                            <span class="pill pill-highlight">.NET 8.0</span>
-                            <span class="pill pill-highlight">ASP.NET Core MVC</span>
-                            <span class="pill pill-highlight">APIs RESTful</span>
-                            <span class="pill pill-highlight">EF Core 8</span>
-                            <span class="pill pill-highlight">Razor Pages</span>
-                            <span class="pill">LINQ</span>
-                            <span class="pill">Dapper</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Herramientas de IA</h4>
-                        <div class="skills-pills">
-                            <span class="pill pill-ai">Antigravity</span>
-                            <span class="pill pill-ai">Claude Code</span>
-                            <span class="pill pill-ai">GitHub Copilot</span>
-                            <span class="pill pill-ai">AI-Assisted Coding</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Metodologías & Arquitectura</h4>
-                        <div class="skills-pills">
-                            <span class="pill pill-highlight">Clean Architecture</span>
-                            <span class="pill pill-highlight">Principios SOLID</span>
-                            <span class="pill">Clean Code</span>
-                            <span class="pill">Patrón MVC</span>
-                            <span class="pill">Scrum</span>
-                            <span class="pill">Kanban</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Bases de Datos</h4>
-                        <div class="skills-pills">
-                            <span class="pill">SQL Server</span>
-                            <span class="pill">PostgreSQL</span>
-                            <span class="pill">MySQL</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Herramientas & Cloud</h4>
-                        <div class="skills-pills">
-                            <span class="pill">Docker / Docker Compose</span>
-                            <span class="pill">Git / GitHub</span>
-                            <span class="pill">Oracle Cloud</span>
-                            <span class="pill">QuestPDF</span>
-                            <span class="pill">JavaScript / Bootstrap</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section style="margin-top: 14px;">
-                    <h2 class="section-title">Educación</h2>
-                    <div class="edu-item">
-                        <div class="edu-title">Licenciatura en Análisis de Sistemas</div>
-                        <div class="edu-school">Universidad Nacional de Canindeyú (Katueté)</div>
-                        <div class="edu-date">Feb 2022 – Presente</div>
-                    </div>
-                </section>
-
-                <section style="margin-top: 14px;">
-                    <h2 class="section-title">Idiomas</h2>
-                    <div class="lang-item"><span>Español</span> <strong>Nativo</strong></div>
-                    <div class="lang-item"><span>Guaraní</span> <strong>Nativo</strong></div>
-                    <div class="lang-item"><span>Portugués</span> <strong>Avanzado</strong></div>
-                </section>
-
-                <section style="margin-top: 14px;">
-                    <h2 class="section-title">Referencias Laborales</h2>
-                    <div class="edu-item">
-                        <div class="edu-title">Ing. Fernando Sánchez Hartwig</div>
-                        <div class="edu-school">Coordinador de TI - Sisprime Sistemas</div>
-                        <div class="edu-date">+595 983 240491</div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-title">Lic. Edison Medina Valdez</div>
-                        <div class="edu-school">Programador - Sisprime Sistemas</div>
-                        <div class="edu-date">+595 973 744383</div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-title">Cristian Añazco Martínez</div>
-                        <div class="edu-school">Desarrollador Backend</div>
-                        <div class="edu-date">+595 975 766146</div>
-                    </div>
-                </section>
-            </div>
+    <!-- Selector de Especialidad para Reclutadores -->
+    <div class="selector-nav">
+        <div class="nav-brand">
+            <i class="fa-solid fa-code"></i> Seleccionar Perfil Técnico:
+        </div>
+        <div class="switch-tabs">
+            <button class="tab-btn active-net" onclick="setProfile('net')" id="tabNet">
+                <i class="fa-brands fa-microsoft"></i> Especialista C# / .NET
+            </button>
+            <button class="tab-btn" onclick="setProfile('java')" id="tabJava">
+                <i class="fa-brands fa-java"></i> Especialista Java
+            </button>
         </div>
     </div>
 
+    <button class="btn-print" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Imprimir CV / Guardar PDF</button>
+
+    <div class="container" id="cvContainer">
+        <!-- Contenido renderizado dinámicamente según la pestaña activa -->
+        <div id="cvContent"></div>
+    </div>
+
+    <script>
+        const cvData = {
+            net: {
+                titleRole: "Desarrollador Full Stack C# .NET | Junior III",
+                badgeColor: "#38bdf8",
+                primaryAccent: "#0284c7",
+                highlightPill: "#dbeafe",
+                highlightPillText: "#1e40af",
+                jobTitle: "Desarrollador Full Stack C# .NET",
+                companyColor: "#0284c7",
+                bullets: [
+                    "Desarrollo Full Stack, mantenimiento y refactorización de módulos ERP empresariales utilizando <strong>C#, .NET 8, patrón MVC y bases de datos relacionales (SQL Server, PostgreSQL)</strong>.",
+                    "Aplicación de <strong>Clean Architecture, Principios SOLID y buenas prácticas de código limpio (Clean Code)</strong> en arquitecturas multicapa.",
+                    "Construcción de vistas e interfaces dinámicas utilizando <strong>ASP.NET Core Razor Pages / MVC</strong> y desarrollo de <strong>APIs RESTful</strong>.",
+                    "Uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización, depuración y aceleración del ciclo de vida del software.",
+                    "Gestión y despliegue de soluciones contenerizadas mediante <strong>Docker</strong> en servidores VPS (<strong>Contabo</strong>)."
+                ],
+                modules: [
+                    { title: "Módulo Préstamos & Financiero", desc: "Lógica de desembolsos, planes de pagos e integración transaccional con caja en .NET 8." },
+                    { title: "Módulo Órdenes de Servicio", desc: "Diseño desde cero e importación masiva de datos históricos optimizada con EF Core." },
+                    { title: "Módulo Caja & POS (Ventas)", desc: "Modernización y reescritura de código legado para optimizar rendimiento transaccional." },
+                    { title: "Módulo Agrícola (SISAGRO)", desc: "Automatización de cálculos y reportes analíticos para el sector agroindustrial." }
+                ],
+                projectTitle: "ZentroPOS / CTS (Cash Transactions System)",
+                projectBadge: "Proyecto Especializado",
+                projectDesc: "Sistema transaccional de punto de venta y gestión de tesorería empresarial. Diseñado desde cero bajo principios estrictos de <strong>Clean Architecture</strong>, separando Domain, Application, Infrastructure y Presentation para garantizar máxima mantenibilidad y concurrencia.",
+                projectStack: "C# 12, .NET 8, ASP.NET Core Web API, Entity Framework Core 8, SQL Server, Dapper, Clean Architecture.",
+                specialSkillsTitle: "Especialidad C# / .NET",
+                skillsList: ["C# 12", ".NET 8.0", "ASP.NET Core", "APIs RESTful", "EF Core 8", "Razor Pages", "LINQ", "Dapper"]
+            },
+            java: {
+                titleRole: "Desarrollador Full Stack Java | Junior III",
+                badgeColor: "#fb923c",
+                primaryAccent: "#ea580c",
+                highlightPill: "#ffedd5",
+                highlightPillText: "#9a3412",
+                jobTitle: "Desarrollador Full Stack Java",
+                companyColor: "#ea580c",
+                bullets: [
+                    "Desarrollo de servicios backend, APIs empresariales y lógica de negocio orientada a microservicios y monolitos modulares en <strong>Java</strong>.",
+                    "Diseño e implementación de <strong>APIs RESTful seguras, escalables y desacopladas</strong> integradas con bases de datos relacionales (<strong>PostgreSQL, MySQL</strong>).",
+                    "Aplicación de <strong>Clean Architecture, Principios SOLID y Patrones de Diseño (MVC, Repository, DTOs)</strong>.",
+                    "Uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización de lógica algorítmica y refactorización.",
+                    "Despliegue y orquestación con <strong>Docker & Compose</strong> en entornos de producción VPS (<strong>Contabo</strong>)."
+                ],
+                modules: [
+                    { title: "Módulo de Facturación & Caja", desc: "Motor de procesamiento de transacciones financieras concurrentes y cierres de turno." },
+                    { title: "Módulo de Gestión de Inventario", desc: "Control de stock en tiempo real, trazabilidad de lotes y alertas automatizadas." },
+                    { title: "Módulo de Reportes & Analytics", desc: "Generación asíncrona de reportes ejecutivos en PDF y exportación estructurada." },
+                    { title: "Módulo de Autenticación & Roles", desc: "Gestión de permisos granular, seguridad y control de accesos a recursos." }
+                ],
+                projectTitle: "Sistema de Gestión Empresarial & POS Java",
+                projectBadge: "Solución Empresarial",
+                projectDesc: "Plataforma empresarial de punto de venta y gestión transaccional. Desarrollada con <strong>Java</strong> siguiendo estándares de <strong>arquitectura por capas, APIs RESTful y persistencia optimizada</strong> para operaciones de alta disponibilidad.",
+                projectStack: "Java 17/21, Spring Boot / MVC, JPA / Hibernate, Maven, PostgreSQL, Docker, Contabo VPS.",
+                specialSkillsTitle: "Especialidad Java Backend",
+                skillsList: ["Java 17/21", "Spring Boot / MVC", "APIs RESTful", "JPA / Hibernate", "Maven", "JDBC", "POO Avanzada", "Clean Code"]
+            }
+        };
+
+        function setProfile(type) {
+            const data = cvData[type];
+            const isNet = type === 'net';
+
+            // Actualizar botones de pestañas
+            document.getElementById('tabNet').className = 'tab-btn' + (isNet ? ' active-net' : '');
+            document.getElementById('tabJava').className = 'tab-btn' + (!isNet ? ' active-java' : '');
+
+            // Actualizar URL sin recargar
+            if (history.pushState) {
+                history.pushState(null, null, '#' + type);
+            }
+
+            // Renderizar contenido
+            const html = `
+                <header style="background: linear-gradient(135deg, #0f172a 0%, ${isNet ? '#0f2942' : '#2d1810'} 100%);">
+                    <div class="profile-img-box" id="profileBox" style="border-color: ${data.badgeColor};">
+                        <img src="profile.jpg" alt="Nelson Tobias Parra Moreno" onerror="this.remove(); document.getElementById('profileBox').innerHTML='NP';">
+                    </div>
+                    <div class="header-text">
+                        <span class="header-title-badge" style="background: ${data.badgeColor};">Curriculum Vitae</span>
+                        <h1>Nelson Tobias Parra Moreno</h1>
+                        <h2 style="color: ${data.badgeColor};">${data.titleRole}</h2>
+                        <div class="contact-info">
+                            <span><i class="fa-solid fa-envelope"></i> tobiassparra959@gmail.com</span>
+                            <span><i class="fa-solid fa-phone"></i> +595 982 885994</span>
+                            <span><i class="fa-solid fa-location-dot"></i> Salto del Guairá / Katueté, PY</span>
+                            <a href="https://github.com/xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox_hash</a>
+                            <a href="https://www.linkedin.com/in/tobias-parra-moreno-074083357" target="_blank"><i class="fa-brands fa-linkedin"></i> Tobias Parra</a>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="main-content">
+                    <div class="left-col">
+                        <section>
+                            <h2 class="section-title">Experiencia Profesional (1+ Año)</h2>
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <div>
+                                        <span class="experience-title">${data.jobTitle}</span>
+                                        <span class="experience-company" style="color: ${data.companyColor};">Sisprime Sistemas</span>
+                                    </div>
+                                    <span class="experience-date">Jun 2025 – Presente (1+ Año)</span>
+                                </div>
+                                <ul class="experience-bullets">
+                                    ${data.bullets.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+
+                                <h4 style="margin-top: 10px; font-size: 0.88rem; color: var(--primary);">Módulos Desarrollados & Implementados:</h4>
+                                <div class="modules-grid">
+                                    ${data.modules.map(m => `
+                                        <div class="module-box" style="border-left-color: ${data.primaryAccent};">
+                                            <strong>${m.title}</strong>
+                                            ${m.desc}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </section>
+
+                        <section style="margin-top: 14px;">
+                            <h2 class="section-title">Proyecto Destacado</h2>
+                            <div class="project-card" style="border-left-color: ${data.primaryAccent};">
+                                <h3>${data.projectTitle} <span class="status-badge" style="background: ${isNet ? '#e0f2fe' : '#ffedd5'}; color: ${isNet ? '#0369a1' : '#9a3412'}; border: 1px solid ${isNet ? '#bae6fd' : '#fed7aa'};">${data.projectBadge}</span></h3>
+                                <p class="project-narrative">${data.projectDesc}</p>
+                                <div class="stack-box">
+                                    <strong>Stack Principal:</strong> ${data.projectStack}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="right-col">
+                        <section>
+                            <h2 class="section-title">Habilidades Técnicas</h2>
+                            
+                            <div class="skills-group">
+                                <h4>${data.specialSkillsTitle}</h4>
+                                <div class="skills-pills">
+                                    ${data.skillsList.map(s => `<span class="pill" style="background: ${data.highlightPill}; color: ${data.highlightPillText}; font-weight: 700;">${s}</span>`).join('')}
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>Herramientas de IA</h4>
+                                <div class="skills-pills">
+                                    <span class="pill pill-ai">Antigravity</span>
+                                    <span class="pill pill-ai">Claude Code</span>
+                                    <span class="pill pill-ai">GitHub Copilot</span>
+                                    <span class="pill pill-ai">AI-Assisted Workflows</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>Metodologías & Arquitectura</h4>
+                                <div class="skills-pills">
+                                    <span class="pill pill-highlight">Clean Architecture</span>
+                                    <span class="pill pill-highlight">Principios SOLID</span>
+                                    <span class="pill">Clean Code</span>
+                                    <span class="pill">Patrón MVC</span>
+                                    <span class="pill">Scrum / Kanban</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>Bases de Datos & Cloud</h4>
+                                <div class="skills-pills">
+                                    <span class="pill">SQL Server</span>
+                                    <span class="pill">PostgreSQL</span>
+                                    <span class="pill">MySQL</span>
+                                    <span class="pill">Docker & Compose</span>
+                                    <span class="pill">Contabo VPS</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>Frontend & Complementos</h4>
+                                <div class="skills-pills">
+                                    <span class="pill">TypeScript</span>
+                                    <span class="pill">React</span>
+                                    <span class="pill">Bootstrap (SB Admin)</span>
+                                    <span class="pill">HTML5 / CSS3</span>
+                                    <span class="pill">Git / GitHub</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section style="margin-top: 14px;">
+                            <h2 class="section-title">Idiomas</h2>
+                            <div class="lang-item"><span>Español</span> <strong>Nativo</strong></div>
+                            <div class="lang-item"><span>Guaraní</span> <strong>Nativo</strong></div>
+                            <div class="lang-item"><span>Portugués</span> <strong>Avanzado</strong></div>
+                        </section>
+
+                        <section style="margin-top: 14px;">
+                            <h2 class="section-title">Referencias Laborales</h2>
+                            <div class="edu-item">
+                                <div class="edu-title">Ing. Fernando Sánchez Hartwig</div>
+                                <div class="edu-school">Coordinador de TI - Sisprime Sistemas</div>
+                                <div class="edu-date">+595 983 240491</div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-title">Lic. Edison Medina Valdez</div>
+                                <div class="edu-school">Programador - Sisprime Sistemas</div>
+                                <div class="edu-date">+595 973 744383</div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('cvContent').innerHTML = html;
+        }
+
+        // Inicializar según el hash en la URL (#java o #net) o por defecto net
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '').toLowerCase();
+            if (hash === 'java') {
+                setProfile('java');
+            } else {
+                setProfile('net');
+            }
+        });
+    </script>
 </body>
 </html>
