@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Nelson Tobias Parra Moreno | Desarrollador Java Backend / Full Stack</title>
+    <title>Curriculum Vitae - Nelson Tobias Parra Moreno | Java Backend / Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -19,6 +19,65 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; }
         body { background: var(--bg); color: var(--text); line-height: 1.5; padding: 30px 15px; }
+
+        .top-toolbar {
+            max-width: 960px;
+            margin: 0 auto 16px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .lang-switch {
+            display: flex;
+            background: #f1f5f9;
+            padding: 3px;
+            border-radius: 8px;
+            gap: 4px;
+        }
+
+        .lang-btn {
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            cursor: pointer;
+            background: transparent;
+            color: #64748b;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-btn.active {
+            background: #ffffff;
+            color: #ea580c;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .other-cv-link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0284c7;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            background: #f0f9ff;
+            border: 1px solid #e0f2fe;
+            transition: all 0.2s ease;
+        }
+        .other-cv-link:hover { background: #e0f2fe; }
+
         .container { max-width: 960px; margin: 0 auto; background: var(--card-bg); border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.07); overflow: hidden; }
 
         header { background: linear-gradient(135deg, #0f172a 0%, #2b130a 100%); color: white; padding: 35px 35px; display: flex; align-items: center; gap: 25px; position: relative; }
@@ -85,17 +144,13 @@
         .pill-highlight { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
         .pill-ai { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
 
-        .edu-item { margin-bottom: 12px; }
-        .edu-title { font-weight: 700; color: var(--primary); font-size: 0.92rem; }
-        .edu-school { font-size: 0.85rem; color: var(--text-light); }
-        .edu-date { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
-
         .lang-item { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 6px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 3px; }
 
         .btn-print { position: fixed; bottom: 30px; right: 30px; background: #0f172a; color: white; padding: 14px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(15,23,42,0.3); display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; z-index: 1000; text-decoration: none; }
         .btn-print:hover { transform: translateY(-2px); background: #1e293b; }
 
         @media (max-width: 768px) {
+            .top-toolbar { flex-direction: column; gap: 10px; text-align: center; }
             header { flex-direction: column; text-align: center; padding: 30px 20px; }
             .contact-info { justify-content: center; }
             .main-content { grid-template-columns: 1fr; padding: 25px 20px; }
@@ -105,7 +160,7 @@
         @page { size: A4 portrait; margin: 5mm; }
         @media print {
             body { background: #ffffff !important; padding: 0 !important; margin: 0 !important; color: #0f172a !important; font-size: 9.2px !important; line-height: 1.25 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            .btn-print { display: none !important; }
+            .top-toolbar, .btn-print { display: none !important; }
             .container { box-shadow: none !important; border-radius: 0 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; background: #ffffff !important; }
             header { padding: 10px 18px !important; gap: 12px !important; background: #0f172a !important; }
             .profile-img-box { width: 70px !important; height: 70px !important; border-width: 3px !important; }
@@ -132,175 +187,262 @@
             .skills-group h4 { font-size: 0.72rem !important; margin-bottom: 2px !important; }
             .skills-pills { gap: 2px !important; }
             .pill { padding: 1px 4px !important; font-size: 0.68rem !important; }
-            .edu-item { margin-bottom: 3px !important; }
-            .edu-title { font-size: 0.75rem !important; }
-            .edu-school { font-size: 0.70rem !important; }
-            .edu-date { font-size: 0.65rem !important; }
             .lang-item { font-size: 0.72rem !important; margin-bottom: 2px !important; padding-bottom: 1px !important; }
         }
     </style>
 </head>
 <body>
 
-    <button class="btn-print" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Imprimir CV / Guardar PDF</button>
-
-    <div class="container">
-        <header>
-            <div class="profile-img-box" id="profileBox">
-                <img src="profile.jpg" alt="Nelson Tobias Parra Moreno" onerror="this.remove(); document.getElementById('profileBox').innerHTML='NP';">
-            </div>
-            <div class="header-text">
-                <span class="header-title-badge">Curriculum Vitae</span>
-                <h1>Nelson Tobias Parra Moreno</h1>
-                <h2>Desarrollador Java Backend / Full Stack | Freelance & Consultoría</h2>
-                <div class="contact-info">
-                    <span><i class="fa-solid fa-envelope"></i> tobiassparra959@gmail.com</span>
-                    <span><i class="fa-solid fa-phone"></i> +595 982 885994</span>
-                    <span><i class="fa-solid fa-location-dot"></i> Salto del Guairá / Katueté, PY</span>
-                    <a href="https://github.com/xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox_hash</a>
-                    <a href="https://www.linkedin.com/in/tobias-parra-moreno-074083357" target="_blank"><i class="fa-brands fa-linkedin"></i> Tobias Parra</a>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <!-- Columna Izquierda: Experiencia y Proyectos -->
-            <div class="left-col">
-                <section>
-                    <h2 class="section-title">Experiencia Técnica & Consultoría</h2>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="experience-title">Desarrollador Java / Consultor Técnico</span>
-                                <span class="experience-company">Freelance & Soporte a Clientes / Empresas</span>
-                            </div>
-                            <span class="experience-date">2024 – Presente</span>
-                        </div>
-                        <ul class="experience-bullets">
-                            <li>Desarrollo de módulos a medida, mantenimiento y soporte técnico especializado en sistemas empresariales basados en el ecosistema <strong>Java (Spring Boot / MVC, JPA / Hibernate)</strong>.</li>
-                            <li>Diseño e integración de <strong>APIs RESTful desacopladas</strong> para conectar lógica de negocio con bases de datos relacionales (<strong>PostgreSQL, MySQL</strong>).</li>
-                            <li>Asesoría y refactorización de código legado, aplicando principios <strong>SOLID, Clean Architecture y Clean Code</strong> para optimizar rendimiento y estabilidad.</li>
-                            <li>Diagnóstico, resolución de incidencias en producción y optimización de consultas SQL en servidores transaccionales.</li>
-                        </ul>
-
-                        <h4 style="margin-top: 10px; font-size: 0.88rem; color: var(--primary);">Áreas de Soporte & Módulos Implementados:</h4>
-                        <div class="modules-grid">
-                            <div class="module-box">
-                                <strong>Módulo Facturación & Transacciones</strong>
-                                Lógica de cobros, emisión de comprobantes y validaciones transaccionales en Java.
-                            </div>
-                            <div class="module-box">
-                                <strong>Control de Stock & Inventario</strong>
-                                Modelado relacional para trazabilidad de existencias y control de movimientos.
-                            </div>
-                            <div class="module-box">
-                                <strong>APIs de Integración</strong>
-                                Desarrollo de endpoints REST para intercambio seguro de información entre servicios.
-                            </div>
-                            <div class="module-box">
-                                <strong>Optimización de Consultas SQL</strong>
-                                Ajuste de persistencia (JPA/JDBC) para acelerar tiempos de respuesta.
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section style="margin-top: 14px;">
-                    <h2 class="section-title">Proyecto Destacado (Despliegue & Arquitectura)</h2>
-
-                    <!-- Proyecto ZentroPOS -->
-                    <div class="project-card">
-                        <h3>ZentroPOS (Cash Transactions System) <span class="status-badge status-freelance">Proyecto Destacado</span></h3>
-                        <p class="project-narrative">
-                            Sistema transaccional de caja, tesorería y punto de venta empresarial diseñado bajo principios de <strong>Clean Architecture</strong>. Estructurado en capas independientes (Domain, Application, Infrastructure y Presentation) para permitir alta concurrencia, tolerancia a fallos y desacoplamiento.
-                        </p>
-                        <div class="stack-box">
-                            <strong>Stack Técnico:</strong> Arquitectura Limpia, APIs RESTful, Modelado Relacional (PostgreSQL / SQL Server), Docker & Docker Compose.
-                        </div>
-                        <div class="stack-box" style="margin-top: 4px; border-left: 3px solid #ea580c;">
-                            <strong>Infraestructura & Despliegue:</strong> Contenedores <strong>Docker</strong> desplegados y operativos en servidor VPS <strong>Contabo</strong>.
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Columna Derecha: Stack, Educación e Idiomas -->
-            <div class="right-col">
-                <section>
-                    <h2 class="section-title">Habilidades Técnicas</h2>
-                    
-                    <div class="skills-group">
-                        <h4>Especialidad Java</h4>
-                        <div class="skills-pills">
-                            <span class="pill pill-highlight">Java 17 / 21</span>
-                            <span class="pill pill-highlight">Spring Boot</span>
-                            <span class="pill pill-highlight">APIs RESTful</span>
-                            <span class="pill pill-highlight">JPA / Hibernate</span>
-                            <span class="pill pill-highlight">Maven</span>
-                            <span class="pill">JDBC</span>
-                            <span class="pill">POO Avanzada</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Infraestructura & DevOps</h4>
-                        <div class="skills-pills">
-                            <span class="pill pill-highlight">Contabo VPS</span>
-                            <span class="pill pill-highlight">Docker</span>
-                            <span class="pill pill-highlight">Docker Compose</span>
-                            <span class="pill">Git / GitHub</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Metodologías & Arquitectura</h4>
-                        <div class="skills-pills">
-                            <span class="pill pill-highlight">Clean Architecture</span>
-                            <span class="pill pill-highlight">Principios SOLID</span>
-                            <span class="pill">Clean Code</span>
-                            <span class="pill">Patrón MVC</span>
-                            <span class="pill">Scrum / Kanban</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Bases de Datos</h4>
-                        <div class="skills-pills">
-                            <span class="pill">PostgreSQL</span>
-                            <span class="pill">MySQL</span>
-                            <span class="pill">SQL Server</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Frontend & Herramientas</h4>
-                        <div class="skills-pills">
-                            <span class="pill">TypeScript</span>
-                            <span class="pill">React</span>
-                            <span class="pill">HTML5 / CSS3</span>
-                            <span class="pill">Bootstrap</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-group">
-                        <h4>Herramientas de IA</h4>
-                        <div class="skills-pills">
-                            <span class="pill pill-ai">Antigravity</span>
-                            <span class="pill pill-ai">Claude Code</span>
-                            <span class="pill pill-ai">GitHub Copilot</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section style="margin-top: 14px;">
-                    <h2 class="section-title">Idiomas</h2>
-                    <div class="lang-item"><span>Español</span> <strong>Nativo</strong></div>
-                    <div class="lang-item"><span>Guaraní</span> <strong>Nativo</strong></div>
-                    <div class="lang-item"><span>Portugués</span> <strong>Avanzado</strong></div>
-                </section>
-            </div>
+    <div class="top-toolbar">
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLanguage('es')" id="btnEs">🇪🇸 Español</button>
+            <button class="lang-btn" onclick="setLanguage('en')" id="btnEn">🇺🇸 English</button>
         </div>
+        <a href="index.html" class="other-cv-link"><i class="fa-brands fa-microsoft"></i> Ver CV Especialista .NET →</a>
     </div>
 
+    <button class="btn-print" onclick="window.print()" id="btnPrint"><i class="fa-solid fa-file-pdf"></i> Imprimir CV / Guardar PDF</button>
+
+    <div class="container" id="cvContent">
+        <!-- Renderizado dinámico en ES / EN -->
+    </div>
+
+    <script>
+        const content = {
+            es: {
+                roleBadge: "Curriculum Vitae",
+                roleTitle: "Desarrollador Java Backend / Full Stack | Freelance & Consultoría",
+                btnPrint: '<i class="fa-solid fa-file-pdf"></i> Imprimir CV / Guardar PDF',
+                location: "Salto del Guairá / Katueté, PY",
+                expSectionTitle: "Experiencia Técnica & Consultoría",
+                jobTitle: "Desarrollador Java / Consultor Técnico",
+                company: "Freelance & Soporte a Clientes / Empresas",
+                jobPeriod: "2024 – Presente",
+                bullets: [
+                    "Desarrollo de módulos a medida, mantenimiento y soporte técnico especializado en sistemas empresariales basados en el ecosistema <strong>Java (Spring Boot / MVC, JPA / Hibernate)</strong>.",
+                    "Diseño e integración de <strong>APIs RESTful desacopladas</strong> para conectar lógica de negocio con bases de datos relacionales (<strong>PostgreSQL, MySQL</strong>).",
+                    "Asesoría y refactorización de código legado, aplicando principios <strong>SOLID, Clean Architecture y Clean Code</strong> para optimizar rendimiento y estabilidad.",
+                    "Diagnóstico, resolución de incidencias en producción y optimización de consultas SQL en servidores transaccionales."
+                ],
+                modulesTitle: "Áreas de Soporte & Módulos Implementados:",
+                modules: [
+                    { title: "Módulo Facturación & Transacciones", desc: "Lógica de cobros, emisión de comprobantes y validaciones transaccionales en Java." },
+                    { title: "Control de Stock & Inventario", desc: "Modelado relacional para trazabilidad de existencias y control de movimientos." },
+                    { title: "APIs de Integración", desc: "Desarrollo de endpoints REST para intercambio seguro de información entre servicios." },
+                    { title: "Optimización de Consultas SQL", desc: "Ajuste de persistencia (JPA/JDBC) para acelerar tiempos de respuesta." }
+                ],
+                projectsSectionTitle: "Proyecto Destacado (Despliegue & Arquitectura)",
+                projectBadge1: "Proyecto Destacado",
+                projectDesc1: "Sistema transaccional de caja, tesorería y punto de venta empresarial diseñado bajo principios de <strong>Clean Architecture</strong>. Estructurado en capas independientes (Domain, Application, Infrastructure y Presentation) para permitir alta concurrencia, tolerancia a fallos y desacoplamiento.",
+                projectStack1: "Arquitectura Limpia, APIs RESTful, Modelado Relacional (PostgreSQL / SQL Server), Docker & Docker Compose.",
+                projectInfra1: "Contenedores <strong>Docker</strong> desplegados y operativos en servidor VPS <strong>Contabo</strong>.",
+                skillsSectionTitle: "Habilidades Técnicas",
+                specialSkillsTitle: "Especialidad Java",
+                devopsSkillsTitle: "Infraestructura & DevOps",
+                archSkillsTitle: "Metodologías & Arquitectura",
+                dbSkillsTitle: "Bases de Datos",
+                frontSkillsTitle: "Frontend & Herramientas",
+                aiSkillsTitle: "Herramientas de IA",
+                langSectionTitle: "Idiomas",
+                languages: [
+                    { name: "Español", level: "Nativo" },
+                    { name: "Guaraní", level: "Nativo" },
+                    { name: "Portugués", level: "Avanzado" },
+                    { name: "Inglés", level: "Técnico / Profesional" }
+                ]
+            },
+            en: {
+                roleBadge: "Curriculum Vitae",
+                roleTitle: "Java Backend / Full Stack Developer | Freelance & Consulting",
+                btnPrint: '<i class="fa-solid fa-file-pdf"></i> Print Resume / Save PDF',
+                location: "Salto del Guaira / Katuete, Paraguay",
+                expSectionTitle: "Technical Experience & Consulting",
+                jobTitle: "Java Developer / Technical Consultant",
+                company: "Freelance & Client / Business Support",
+                jobPeriod: "2024 – Present",
+                bullets: [
+                    "Custom module engineering, system maintenance, and technical consulting for enterprise systems built with the <strong>Java ecosystem (Spring Boot / MVC, JPA / Hibernate)</strong>.",
+                    "Design and integration of <strong>decoupled RESTful APIs</strong> connecting business logic with relational database engines (<strong>PostgreSQL, MySQL</strong>).",
+                    "Advisory and legacy code refactoring adhering to <strong>SOLID principles, Clean Architecture, and Clean Code</strong> to maximize reliability and throughput.",
+                    "Production incident resolution, bug triage, and SQL query performance tuning on transactional database servers."
+                ],
+                modulesTitle: "Key Modules & Consulting Areas:",
+                modules: [
+                    { title: "Billing & Transaction Module", desc: "Payment processing workflows, electronic voucher generation, and business rules in Java." },
+                    { title: "Stock & Inventory Control", desc: "Relational database schema modeling for real-time inventory tracking and batch control." },
+                    { title: "Integration APIs", desc: "Engineered secure RESTful endpoints for cross-platform data exchange." },
+                    { title: "SQL Query Optimization", desc: "Tuned persistence layer operations (JPA/JDBC) to decrease latency and resource usage." }
+                ],
+                projectsSectionTitle: "Featured Project (Architecture & Deployment)",
+                projectBadge1: "Featured Project",
+                projectDesc1: "Enterprise Point of Sale, cash register, and treasury management system designed under strict <strong>Clean Architecture</strong>. Separated into independent layers (Domain, Application, Infrastructure, Presentation) for high concurrency, fault tolerance, and modularity.",
+                projectStack1: "Clean Architecture, RESTful APIs, Relational Modeling (PostgreSQL / SQL Server), Docker & Docker Compose.",
+                projectInfra1: "<strong>Docker</strong> containers deployed and operating on a <strong>Contabo VPS</strong> server.",
+                skillsSectionTitle: "Technical Skills",
+                specialSkillsTitle: "Java Specialization",
+                devopsSkillsTitle: "Infrastructure & DevOps",
+                archSkillsTitle: "Architecture & Practices",
+                dbSkillsTitle: "Databases",
+                frontSkillsTitle: "Frontend & Tools",
+                aiSkillsTitle: "AI-Assisted Tools",
+                langSectionTitle: "Languages",
+                languages: [
+                    { name: "Spanish", level: "Native" },
+                    { name: "Guarani", level: "Native" },
+                    { name: "Portuguese", level: "Advanced" },
+                    { name: "English", level: "Technical / Professional" }
+                ]
+            }
+        };
+
+        function setLanguage(lang) {
+            const d = content[lang];
+            document.getElementById('btnEs').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
+            document.getElementById('btnEn').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+            document.getElementById('btnPrint').innerHTML = d.btnPrint;
+
+            const html = `
+                <header>
+                    <div class="profile-img-box" id="profileBox">
+                        <img src="profile.jpg" alt="Nelson Tobias Parra Moreno" onerror="this.remove(); document.getElementById('profileBox').innerHTML='NP';">
+                    </div>
+                    <div class="header-text">
+                        <span class="header-title-badge">${d.roleBadge}</span>
+                        <h1>Nelson Tobias Parra Moreno</h1>
+                        <h2>${d.roleTitle}</h2>
+                        <div class="contact-info">
+                            <span><i class="fa-solid fa-envelope"></i> tobiassparra959@gmail.com</span>
+                            <span><i class="fa-solid fa-phone"></i> +595 982 885994</span>
+                            <span><i class="fa-solid fa-location-dot"></i> ${d.location}</span>
+                            <a href="https://github.com/xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox_hash</a>
+                            <a href="https://www.linkedin.com/in/tobias-parra-moreno-074083357" target="_blank"><i class="fa-brands fa-linkedin"></i> Tobias Parra</a>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="main-content">
+                    <div class="left-col">
+                        <section>
+                            <h2 class="section-title">${d.expSectionTitle}</h2>
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <div>
+                                        <span class="experience-title">${d.jobTitle}</span>
+                                        <span class="experience-company">${d.company}</span>
+                                    </div>
+                                    <span class="experience-date">${d.jobPeriod}</span>
+                                </div>
+                                <ul class="experience-bullets">
+                                    ${d.bullets.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+
+                                <h4 style="margin-top: 10px; font-size: 0.88rem; color: var(--primary);">${d.modulesTitle}</h4>
+                                <div class="modules-grid">
+                                    ${d.modules.map(m => `
+                                        <div class="module-box">
+                                            <strong>${m.title}</strong>
+                                            ${m.desc}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </section>
+
+                        <section style="margin-top: 14px;">
+                            <h2 class="section-title">${d.projectsSectionTitle}</h2>
+
+                            <div class="project-card">
+                                <h3>ZentroPOS (Cash Transactions System) <span class="status-badge status-freelance">${d.projectBadge1}</span></h3>
+                                <p class="project-narrative">${d.projectDesc1}</p>
+                                <div class="stack-box">
+                                    <strong>Stack:</strong> ${d.projectStack1}
+                                </div>
+                                <div class="stack-box" style="margin-top: 4px; border-left: 3px solid #ea580c;">
+                                    <strong>${lang === 'es' ? 'Infraestructura & Despliegue:' : 'Infrastructure & Deployment:'}</strong> ${d.projectInfra1}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="right-col">
+                        <section>
+                            <h2 class="section-title">${d.skillsSectionTitle}</h2>
+                            
+                            <div class="skills-group">
+                                <h4>${d.specialSkillsTitle}</h4>
+                                <div class="skills-pills">
+                                    <span class="pill pill-highlight">Java 17 / 21</span>
+                                    <span class="pill pill-highlight">Spring Boot</span>
+                                    <span class="pill pill-highlight">APIs RESTful</span>
+                                    <span class="pill pill-highlight">JPA / Hibernate</span>
+                                    <span class="pill pill-highlight">Maven</span>
+                                    <span class="pill">JDBC</span>
+                                    <span class="pill">POO / OOP</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>${d.devopsSkillsTitle}</h4>
+                                <div class="skills-pills">
+                                    <span class="pill pill-highlight">Contabo VPS</span>
+                                    <span class="pill pill-highlight">Docker</span>
+                                    <span class="pill pill-highlight">Docker Compose</span>
+                                    <span class="pill">Git / GitHub</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>${d.archSkillsTitle}</h4>
+                                <div class="skills-pills">
+                                    <span class="pill pill-highlight">Clean Architecture</span>
+                                    <span class="pill pill-highlight">SOLID Principles</span>
+                                    <span class="pill">Clean Code</span>
+                                    <span class="pill">MVC Pattern</span>
+                                    <span class="pill">Scrum / Kanban</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>${d.dbSkillsTitle}</h4>
+                                <div class="skills-pills">
+                                    <span class="pill">PostgreSQL</span>
+                                    <span class="pill">MySQL</span>
+                                    <span class="pill">SQL Server</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>${d.frontSkillsTitle}</h4>
+                                <div class="skills-pills">
+                                    <span class="pill">TypeScript</span>
+                                    <span class="pill">React</span>
+                                    <span class="pill">HTML5 / CSS3</span>
+                                    <span class="pill">Bootstrap</span>
+                                </div>
+                            </div>
+
+                            <div class="skills-group">
+                                <h4>${d.aiSkillsTitle}</h4>
+                                <div class="skills-pills">
+                                    <span class="pill pill-ai">Antigravity</span>
+                                    <span class="pill pill-ai">Claude Code</span>
+                                    <span class="pill pill-ai">GitHub Copilot</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section style="margin-top: 14px;">
+                            <h2 class="section-title">${d.langSectionTitle}</h2>
+                            ${d.languages.map(l => `<div class="lang-item"><span>${l.name}</span> <strong>${l.level}</strong></div>`).join('')}
+                        </section>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('cvContent').innerHTML = html;
+        }
+
+        setLanguage('es');
+    </script>
 </body>
 </html>
