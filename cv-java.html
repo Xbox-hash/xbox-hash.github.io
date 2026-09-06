@@ -232,10 +232,11 @@
                     { title: "Optimización de Consultas SQL", desc: "Ajuste de persistencia (JPA/JDBC) para acelerar tiempos de respuesta." }
                 ],
                 projectsSectionTitle: "Proyecto Destacado (Despliegue & Arquitectura)",
-                projectBadge1: "Proyecto Destacado",
+                projectBadge1: "En Producción / Live",
                 projectDesc1: "Sistema transaccional de caja, tesorería y punto de venta empresarial diseñado bajo principios de <strong>Clean Architecture</strong>. Estructurado en capas independientes (Domain, Application, Infrastructure y Presentation) para permitir alta concurrencia, tolerancia a fallos y desacoplamiento.",
                 projectStack1: "Arquitectura Limpia, APIs RESTful, Modelado Relacional (PostgreSQL / SQL Server), Docker & Docker Compose.",
                 projectInfra1: "Contenedores <strong>Docker</strong> desplegados y operativos en servidor VPS <strong>Contabo</strong>.",
+                projectLinkText1: "Ver Sistema en Producción (Servidor Contabo) →",
                 skillsSectionTitle: "Habilidades Técnicas",
                 specialSkillsTitle: "Especialidad Java",
                 devopsSkillsTitle: "Infraestructura & DevOps",
@@ -273,10 +274,11 @@
                     { title: "SQL Query Optimization", desc: "Tuned persistence layer operations (JPA/JDBC) to decrease latency and resource usage." }
                 ],
                 projectsSectionTitle: "Featured Project (Architecture & Deployment)",
-                projectBadge1: "Featured Project",
+                projectBadge1: "Live in Production",
                 projectDesc1: "Enterprise Point of Sale, cash register, and treasury management system designed under strict <strong>Clean Architecture</strong>. Separated into independent layers (Domain, Application, Infrastructure, Presentation) for high concurrency, fault tolerance, and modularity.",
                 projectStack1: "Clean Architecture, RESTful APIs, Relational Modeling (PostgreSQL / SQL Server), Docker & Docker Compose.",
                 projectInfra1: "<strong>Docker</strong> containers deployed and operating on a <strong>Contabo VPS</strong> server.",
+                projectLinkText1: "View Live System (Contabo VPS Server) →",
                 skillsSectionTitle: "Technical Skills",
                 specialSkillsTitle: "Java Specialization",
                 devopsSkillsTitle: "Infrastructure & DevOps",
@@ -350,13 +352,18 @@
                             <h2 class="section-title">${d.projectsSectionTitle}</h2>
 
                             <div class="project-card">
-                                <h3>ZentroPOS (Cash Transactions System) <span class="status-badge status-freelance">${d.projectBadge1}</span></h3>
+                                <h3>ZentroPOS (Cash Transactions System) <span class="status-badge" style="background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0;">${d.projectBadge1}</span></h3>
                                 <p class="project-narrative">${d.projectDesc1}</p>
                                 <div class="stack-box">
                                     <strong>Stack:</strong> ${d.projectStack1}
                                 </div>
                                 <div class="stack-box" style="margin-top: 4px; border-left: 3px solid #ea580c;">
                                     <strong>${lang === 'es' ? 'Infraestructura & Despliegue:' : 'Infrastructure & Deployment:'}</strong> ${d.projectInfra1}
+                                </div>
+                                <div style="margin-top: 8px; text-align: right;">
+                                    <a href="http://86.48.21.7:4000" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ea580c; color: #ffffff; padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; text-decoration: none;">
+                                        <i class="fa-solid fa-server"></i> ${d.projectLinkText1}
+                                    </a>
                                 </div>
                             </div>
                         </section>
