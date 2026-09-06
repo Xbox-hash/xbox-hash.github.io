@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Nelson Tobias Parra Moreno | Desarrollador Full Stack C# .NET</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #0284c7;
+            --text: #334155;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.5; padding: 30px 15px; }
+        .container { max-width: 960px; margin: 0 auto; background: var(--card-bg); border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.07); overflow: hidden; }
+
+        header { background: linear-gradient(135deg, #0f172a 0%, #0f2942 100%); color: white; padding: 35px 35px; display: flex; align-items: center; gap: 25px; position: relative; }
+        
+        .profile-img-box {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            object-fit: cover;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .profile-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .header-title-badge { display: inline-block; background: #38bdf8; color: #0f172a; font-size: 0.8rem; font-weight: 800; padding: 3px 12px; border-radius: 12px; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1.5px; }
+
+        .header-text h1 { font-size: 2.2rem; margin-bottom: 3px; color: #f8fafc; font-weight: 700; letter-spacing: -0.5px; }
+        .header-text h2 { font-size: 1.15rem; font-weight: 600; color: #38bdf8; margin-bottom: 12px; }
+        .contact-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #cbd5e1; }
+        .contact-info span, .contact-info a { color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .contact-info a:hover { color: #38bdf8; }
+
+        .main-content { display: grid; grid-template-columns: 1.85fr 1fr; gap: 30px; padding: 35px; }
+        
+        .section-title { font-size: 1.15rem; color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+
+        .experience-item { margin-bottom: 20px; }
+        .experience-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; flex-wrap: wrap; }
+        .experience-title { font-size: 1.05rem; font-weight: 700; color: var(--primary); }
+        .experience-company { font-weight: 600; color: var(--accent); display: block; }
+        .experience-date { font-size: 0.82rem; color: var(--text-light); font-weight: 600; }
+        .experience-bullets { padding-left: 16px; font-size: 0.88rem; color: var(--text); margin-top: 6px; }
+        .experience-bullets li { margin-bottom: 4px; }
+
+        .modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .module-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px; font-size: 0.84rem; border-left: 3px solid var(--accent); }
+        .module-box strong { color: var(--primary); display: block; font-size: 0.88rem; margin-bottom: 2px; }
+
+        .project-card { background: #f8fafc; border-left: 4px solid var(--accent); padding: 14px 16px; border-radius: 0 8px 8px 0; margin-bottom: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .project-card h3 { font-size: 1.02rem; color: var(--primary); margin-bottom: 5px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+        
+        .status-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .status-freelance { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+
+        .project-narrative { font-size: 0.86rem; color: #334155; line-height: 1.5; margin-bottom: 8px; }
+        .project-narrative strong { color: var(--primary); }
+
+        .stack-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; font-size: 0.82rem; color: #334155; }
+        .stack-box strong { color: var(--primary); }
+
+        .skills-group { margin-bottom: 16px; }
+        .skills-group h4 { font-size: 0.9rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .skills-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+        .pill { background: #e2e8f0; color: var(--secondary); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .pill-highlight { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+        .pill-ai { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+
+        .edu-item { margin-bottom: 12px; }
+        .edu-title { font-weight: 700; color: var(--primary); font-size: 0.92rem; }
+        .edu-school { font-size: 0.85rem; color: var(--text-light); }
+        .edu-date { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+
+        .lang-item { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 6px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 3px; }
+
+        .btn-print { position: fixed; bottom: 30px; right: 30px; background: #0f172a; color: white; padding: 14px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(15,23,42,0.3); display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s ease; z-index: 1000; text-decoration: none; }
+        .btn-print:hover { transform: translateY(-2px); background: #1e293b; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .contact-info { justify-content: center; }
+            .main-content { grid-template-columns: 1fr; padding: 25px 20px; }
+            .modules-grid { grid-template-columns: 1fr; }
+        }
+
+        @page { size: A4 portrait; margin: 5mm; }
+        @media print {
+            body { background: #ffffff !important; padding: 0 !important; margin: 0 !important; color: #0f172a !important; font-size: 9.2px !important; line-height: 1.25 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .btn-print { display: none !important; }
+            .container { box-shadow: none !important; border-radius: 0 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; background: #ffffff !important; }
+            header { padding: 10px 18px !important; gap: 12px !important; background: #0f172a !important; }
+            .profile-img-box { width: 70px !important; height: 70px !important; border-width: 3px !important; }
+            .header-text h1 { font-size: 1.4rem !important; margin-bottom: 2px !important; color: #ffffff !important; }
+            .header-text h2 { font-size: 0.85rem !important; margin-bottom: 3px !important; }
+            .header-title-badge { font-size: 0.65rem !important; padding: 2px 6px !important; margin-bottom: 2px !important; }
+            .contact-info { gap: 8px !important; font-size: 0.72rem !important; color: #cbd5e1 !important; }
+            .main-content { display: grid !important; grid-template-columns: 1.85fr 1fr !important; gap: 10px !important; padding: 10px 15px !important; }
+            .section-title { font-size: 0.82rem !important; margin-bottom: 4px !important; padding-bottom: 2px !important; }
+            .experience-item { margin-bottom: 5px !important; }
+            .experience-title { font-size: 0.80rem !important; }
+            .experience-company { font-size: 0.75rem !important; }
+            .experience-date { font-size: 0.70rem !important; }
+            .experience-bullets { margin-top: 2px !important; padding-left: 12px !important; font-size: 0.72rem !important; }
+            .experience-bullets li { margin-bottom: 1px !important; }
+            .modules-grid { gap: 3px !important; margin-top: 3px !important; grid-template-columns: 1fr 1fr !important; }
+            .module-box { padding: 3px 5px !important; font-size: 0.70rem !important; }
+            .module-box strong { font-size: 0.72rem !important; margin-bottom: 1px !important; }
+            .project-card { padding: 6px 8px !important; margin-bottom: 6px !important; }
+            .project-card h3 { font-size: 0.78rem !important; margin-bottom: 2px !important; }
+            .project-narrative { font-size: 0.70rem !important; line-height: 1.25 !important; margin-bottom: 3px !important; }
+            .stack-box { padding: 3px 5px !important; font-size: 0.68rem !important; }
+            .skills-group { margin-bottom: 4px !important; }
+            .skills-group h4 { font-size: 0.72rem !important; margin-bottom: 2px !important; }
+            .skills-pills { gap: 2px !important; }
+            .pill { padding: 1px 4px !important; font-size: 0.68rem !important; }
+            .edu-item { margin-bottom: 3px !important; }
+            .edu-title { font-size: 0.75rem !important; }
+            .edu-school { font-size: 0.70rem !important; }
+            .edu-date { font-size: 0.65rem !important; }
+            .lang-item { font-size: 0.72rem !important; margin-bottom: 2px !important; padding-bottom: 1px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn-print" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Imprimir CV / Guardar PDF</button>
+
+    <div class="container">
+        <header>
+            <div class="profile-img-box" id="profileBox">
+                <img src="profile.jpg" alt="Nelson Tobias Parra Moreno" onerror="this.remove(); document.getElementById('profileBox').innerHTML='NP';">
+            </div>
+            <div class="header-text">
+                <span class="header-title-badge">Curriculum Vitae</span>
+                <h1>Nelson Tobias Parra Moreno</h1>
+                <h2>Desarrollador Full Stack C# .NET | Junior III (1+ Año de Exp.)</h2>
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-envelope"></i> tobiassparra959@gmail.com</span>
+                    <span><i class="fa-solid fa-phone"></i> +595 982 885994</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Salto del Guairá / Katueté, PY</span>
+                    <a href="https://github.com/xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox_hash</a>
+                    <a href="https://www.linkedin.com/in/tobias-parra-moreno-074083357" target="_blank"><i class="fa-brands fa-linkedin"></i> Tobias Parra</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Columna Izquierda: Experiencia y Proyectos -->
+            <div class="left-col">
+                <section>
+                    <h2 class="section-title">Experiencia Profesional (1+ Año)</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <span class="experience-title">Desarrollador Full Stack C# .NET</span>
+                                <span class="experience-company">Sisprime Sistemas</span>
+                            </div>
+                            <span class="experience-date">Jun 2025 – Presente (1+ Año)</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Desarrollo Full Stack, mantenimiento y refactorización de módulos ERP empresariales utilizando <strong>C#, .NET 8, patrón MVC y bases de datos relacionales (SQL Server, PostgreSQL)</strong>.</li>
+                            <li>Aplicación de <strong>Clean Architecture, Principios SOLID y buenas prácticas de código limpio (Clean Code)</strong> en arquitecturas multicapa.</li>
+                            <li>Construcción de vistas e interfaces dinámicas utilizando <strong>ASP.NET Core Razor Pages / MVC</strong> y desarrollo de <strong>APIs RESTful</strong>.</li>
+                            <li>Integración y uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización de lógica, depuración y aceleración del desarrollo.</li>
+                        </ul>
+
+                        <h4 style="margin-top: 10px; font-size: 0.88rem; color: var(--primary);">Módulos Desarrollados & Implementados:</h4>
+                        <div class="modules-grid">
+                            <div class="module-box">
+                                <strong>Módulo Préstamos & Financiero</strong>
+                                Lógica de desembolsos, planes de pagos e integración transaccional con caja en .NET 8.
+                            </div>
+                            <div class="module-box">
+                                <strong>Módulo Órdenes de Servicio</strong>
+                                Diseño desde cero e importación masiva de datos históricos optimizada con EF Core.
+                            </div>
+                            <div class="module-box">
+                                <strong>Módulo Caja & POS (Ventas)</strong>
+                                Modernización y reescritura de código legado para optimizar rendimiento transaccional.
+                            </div>
+                            <div class="module-box">
+                                <strong>Módulo Agrícola (SISAGRO)</strong>
+                                Automatización de cálculos y reportes analíticos para el sector agroindustrial.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section style="margin-top: 14px;">
+                    <h2 class="section-title">Proyectos Destacados (.NET)</h2>
+
+                    <!-- Proyecto 1: Terra Macetas -->
+                    <div class="project-card">
+                        <h3>Terra Macetas <span class="status-badge status-freelance">Proyecto Destacado</span></h3>
+                        <p class="project-narrative">
+                            Sistema web de catálogo comercial de macetas con carrito de compras, integración de pedidos automatizados vía WhatsApp y panel administrativo integral para gestión de inventario y pedidos.
+                        </p>
+                        <div class="stack-box">
+                            <strong>Stack:</strong> React, TypeScript, ASP.NET Core 8, SQL Server, Entity Framework Core, Bootstrap.
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2: ERP Ganadero -->
+                    <div class="project-card">
+                        <h3>ERP Ganadero (Sistema Agroganadero) <span class="status-badge status-freelance">Proyecto Freelance</span></h3>
+                        <p class="project-narrative">
+                            Aplicación web empresarial para la administración operativa, control ganadero y trazabilidad de stock. Desarrollado con arquitectura <strong>MVC</strong> y vistas dinámicas con <strong>Razor Pages</strong>.
+                        </p>
+                        <div class="stack-box">
+                            <strong>Stack:</strong> C# 12, .NET 8.0, Patrón MVC, Razor Pages, Entity Framework Core 8, SQL Server, Bootstrap.
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Stack, Educación e Idiomas -->
+            <div class="right-col">
+                <section>
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    
+                    <div class="skills-group">
+                        <h4>Especialidad C# .NET</h4>
+                        <div class="skills-pills">
+                            <span class="pill pill-highlight">C# 12</span>
+                            <span class="pill pill-highlight">.NET 8.0</span>
+                            <span class="pill pill-highlight">ASP.NET Core</span>
+                            <span class="pill pill-highlight">APIs RESTful</span>
+                            <span class="pill pill-highlight">EF Core 8</span>
+                            <span class="pill pill-highlight">Razor Pages</span>
+                            <span class="pill">LINQ</span>
+                            <span class="pill">Dapper</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Herramientas de IA</h4>
+                        <div class="skills-pills">
+                            <span class="pill pill-ai">Antigravity</span>
+                            <span class="pill pill-ai">Claude Code</span>
+                            <span class="pill pill-ai">GitHub Copilot</span>
+                            <span class="pill pill-ai">AI-Assisted Coding</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Metodologías & Arquitectura</h4>
+                        <div class="skills-pills">
+                            <span class="pill pill-highlight">Clean Architecture</span>
+                            <span class="pill pill-highlight">Principios SOLID</span>
+                            <span class="pill">Clean Code</span>
+                            <span class="pill">Patrón MVC</span>
+                            <span class="pill">Scrum / Kanban</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Bases de Datos</h4>
+                        <div class="skills-pills">
+                            <span class="pill">SQL Server</span>
+                            <span class="pill">PostgreSQL</span>
+                            <span class="pill">MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Frontend & Herramientas</h4>
+                        <div class="skills-pills">
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">React</span>
+                            <span class="pill">Bootstrap (SB Admin)</span>
+                            <span class="pill">HTML5 / CSS3</span>
+                            <span class="pill">Git / GitHub</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section style="margin-top: 14px;">
+                    <h2 class="section-title">Idiomas</h2>
+                    <div class="lang-item"><span>Español</span> <strong>Nativo</strong></div>
+                    <div class="lang-item"><span>Guaraní</span> <strong>Nativo</strong></div>
+                    <div class="lang-item"><span>Portugués</span> <strong>Avanzado</strong></div>
+                </section>
+
+                <section style="margin-top: 14px;">
+                    <h2 class="section-title">Referencias Laborales</h2>
+                    <div class="edu-item">
+                        <div class="edu-title">Ing. Fernando Sánchez Hartwig</div>
+                        <div class="edu-school">Coordinador de TI - Sisprime Sistemas</div>
+                        <div class="edu-date">+595 983 240491</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">Lic. Edison Medina Valdez</div>
+                        <div class="edu-school">Programador - Sisprime Sistemas</div>
+                        <div class="edu-date">+595 973 744383</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">Cristian Añazco Martínez</div>
+                        <div class="edu-school">Desarrollador Backend</div>
+                        <div class="edu-date">+595 975 766146</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
