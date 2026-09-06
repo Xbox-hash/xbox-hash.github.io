@@ -241,8 +241,7 @@
                     "Desarrollo Full Stack, mantenimiento y refactorización de módulos ERP empresariales utilizando <strong>C#, .NET 8, patrón MVC y bases de datos relacionales (SQL Server, PostgreSQL)</strong>.",
                     "Aplicación de <strong>Clean Architecture, Principios SOLID y buenas prácticas de código limpio (Clean Code)</strong> en arquitecturas multicapa.",
                     "Construcción de vistas e interfaces dinámicas utilizando <strong>ASP.NET Core Razor Pages / MVC</strong> y desarrollo de <strong>APIs RESTful</strong>.",
-                    "Uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización, depuración y aceleración del ciclo de vida del software.",
-                    "Gestión y despliegue de soluciones contenerizadas mediante <strong>Docker</strong> en servidores VPS (<strong>Contabo</strong>)."
+                    "Integración y uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización de lógica, depuración y aceleración del desarrollo."
                 ],
                 modules: [
                     { title: "Módulo Préstamos & Financiero", desc: "Lógica de desembolsos, planes de pagos e integración transaccional con caja en .NET 8." },
@@ -250,10 +249,10 @@
                     { title: "Módulo Caja & POS (Ventas)", desc: "Modernización y reescritura de código legado para optimizar rendimiento transaccional." },
                     { title: "Módulo Agrícola (SISAGRO)", desc: "Automatización de cálculos y reportes analíticos para el sector agroindustrial." }
                 ],
-                projectTitle: "ZentroPOS / CTS (Cash Transactions System)",
-                projectBadge: "Proyecto Especializado",
-                projectDesc: "Sistema transaccional de punto de venta y gestión de tesorería empresarial. Diseñado desde cero bajo principios estrictos de <strong>Clean Architecture</strong>, separando Domain, Application, Infrastructure y Presentation para garantizar máxima mantenibilidad y concurrencia.",
-                projectStack: "C# 12, .NET 8, ASP.NET Core Web API, Entity Framework Core 8, SQL Server, Dapper, Clean Architecture.",
+                projectTitle: "ERP Ganadero (Sistema Agroganadero)",
+                projectBadge: "Proyecto Freelance",
+                projectDesc: "Aplicación web empresarial para la administración operativa, ganadera y control de stock. Desarrollado en modalidad <strong>Freelance / Particular</strong> utilizando <strong>C#</strong> sobre <strong>.NET 8.0</strong>, estructurado bajo el <strong>patrón arquitectónico MVC</strong> y vistas con <strong>Razor Pages</strong>.",
+                projectStack: "C# 12, .NET 8.0, Patrón MVC, Razor Pages, Entity Framework Core 8, SQL Server, Bootstrap.",
                 specialSkillsTitle: "Especialidad C# / .NET",
                 skillsList: ["C# 12", ".NET 8.0", "ASP.NET Core", "APIs RESTful", "EF Core 8", "Razor Pages", "LINQ", "Dapper"]
             },
@@ -266,22 +265,21 @@
                 jobTitle: "Desarrollador Full Stack Java",
                 companyColor: "#ea580c",
                 bullets: [
-                    "Desarrollo de servicios backend, APIs empresariales y lógica de negocio orientada a microservicios y monolitos modulares en <strong>Java</strong>.",
-                    "Diseño e implementación de <strong>APIs RESTful seguras, escalables y desacopladas</strong> integradas con bases de datos relacionales (<strong>PostgreSQL, MySQL</strong>).",
+                    "Desarrollo de servicios backend, APIs empresariales y lógica de negocio orientada a arquitectura desacoplada en <strong>Java</strong>.",
+                    "Diseño e implementación de <strong>APIs RESTful seguras y escalables</strong> integradas con bases de datos relacionales (<strong>PostgreSQL, MySQL</strong>).",
                     "Aplicación de <strong>Clean Architecture, Principios SOLID y Patrones de Diseño (MVC, Repository, DTOs)</strong>.",
-                    "Uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización de lógica algorítmica y refactorización.",
-                    "Despliegue y orquestación con <strong>Docker & Compose</strong> en entornos de producción VPS (<strong>Contabo</strong>)."
+                    "Uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización de lógica algorítmica y refactorización de código."
                 ],
                 modules: [
                     { title: "Módulo de Facturación & Caja", desc: "Motor de procesamiento de transacciones financieras concurrentes y cierres de turno." },
                     { title: "Módulo de Gestión de Inventario", desc: "Control de stock en tiempo real, trazabilidad de lotes y alertas automatizadas." },
-                    { title: "Módulo de Reportes & Analytics", desc: "Generación asíncrona de reportes ejecutivos en PDF y exportación estructurada." },
+                    { title: "Módulo de Reportes & Analytics", desc: "Generación asíncrona de reportes ejecutivos y exportación estructurada." },
                     { title: "Módulo de Autenticación & Roles", desc: "Gestión de permisos granular, seguridad y control de accesos a recursos." }
                 ],
-                projectTitle: "Sistema de Gestión Empresarial & POS Java",
+                projectTitle: "Sistema de Facturación & Inventario Java",
                 projectBadge: "Solución Empresarial",
                 projectDesc: "Plataforma empresarial de punto de venta y gestión transaccional. Desarrollada con <strong>Java</strong> siguiendo estándares de <strong>arquitectura por capas, APIs RESTful y persistencia optimizada</strong> para operaciones de alta disponibilidad.",
-                projectStack: "Java 17/21, Spring Boot / MVC, JPA / Hibernate, Maven, PostgreSQL, Docker, Contabo VPS.",
+                projectStack: "Java 17/21, Spring Boot / MVC, JPA / Hibernate, Maven, PostgreSQL.",
                 specialSkillsTitle: "Especialidad Java Backend",
                 skillsList: ["Java 17/21", "Spring Boot / MVC", "APIs RESTful", "JPA / Hibernate", "Maven", "JDBC", "POO Avanzada", "Clean Code"]
             }
@@ -393,13 +391,11 @@
                             </div>
 
                             <div class="skills-group">
-                                <h4>Bases de Datos & Cloud</h4>
+                                <h4>Bases de Datos</h4>
                                 <div class="skills-pills">
                                     <span class="pill">SQL Server</span>
                                     <span class="pill">PostgreSQL</span>
                                     <span class="pill">MySQL</span>
-                                    <span class="pill">Docker & Compose</span>
-                                    <span class="pill">Contabo VPS</span>
                                 </div>
                             </div>
 
@@ -442,7 +438,6 @@
             document.getElementById('cvContent').innerHTML = html;
         }
 
-        // Inicializar según el hash en la URL (#java o #net) o por defecto net
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.replace('#', '').toLowerCase();
             if (hash === 'java') {
