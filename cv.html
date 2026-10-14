@@ -136,6 +136,9 @@
         .stack-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; font-size: 0.82rem; color: #334155; }
         .stack-box strong { color: var(--primary); }
 
+        .project-link-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: #ffffff; padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; text-decoration: none; transition: all 0.2s ease; }
+        .project-link-btn:hover { background: #0369a1; transform: translateY(-1px); }
+
         .skills-group { margin-bottom: 16px; }
         .skills-group h4 { font-size: 0.9rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
         .skills-pills { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -187,6 +190,7 @@
             .project-card h3 { font-size: 0.78rem !important; margin-bottom: 2px !important; }
             .project-narrative { font-size: 0.70rem !important; line-height: 1.25 !important; margin-bottom: 3px !important; }
             .stack-box { padding: 3px 5px !important; font-size: 0.68rem !important; }
+            .project-link-btn { background: transparent !important; color: #0284c7 !important; padding: 0 !important; font-size: 0.68rem !important; font-weight: 600 !important; }
             .skills-group { margin-bottom: 4px !important; }
             .skills-group h4 { font-size: 0.72rem !important; margin-bottom: 2px !important; }
             .skills-pills { gap: 2px !important; }
@@ -243,6 +247,7 @@
                 projectBadge1: "Proyecto Destacado",
                 projectDesc1: "Sistema web de catálogo comercial de macetas con carrito de compras, pedidos automatizados vía WhatsApp y panel administrativo integral. Diseñado bajo <strong>arquitectura de APIs RESTful</strong> documentadas con <strong>Swagger</strong>.",
                 projectStack1: "React, TypeScript, ASP.NET Core 8 Web API, RESTful, Swagger, EF Core, SQL Server, Bootstrap.",
+                projectLinkText1: "Ver Demo Online (test.donnabotanica.com.py) →",
                 projectBadge2: "Proyecto Freelance",
                 projectDesc2: "Aplicación web empresarial para la administración operativa, control ganadero y trazabilidad de stock. Desarrollado con arquitectura <strong>MVC</strong> y vistas dinámicas con <strong>Razor Pages</strong>.",
                 projectStack2: "C# 12, .NET 8.0, Patrón MVC, Razor Pages, Entity Framework Core 8, SQL Server, Bootstrap.",
@@ -286,6 +291,7 @@
                 projectBadge1: "Featured Project",
                 projectDesc1: "Commercial e-commerce web platform for plant pots featuring shopping cart, automated WhatsApp order processing, and comprehensive admin dashboard. Built on a <strong>RESTful API architecture</strong> documented with <strong>Swagger</strong>.",
                 projectStack1: "React, TypeScript, ASP.NET Core 8 Web API, RESTful, Swagger, EF Core, SQL Server, Bootstrap.",
+                projectLinkText1: "View Live Demo (test.donnabotanica.com.py) →",
                 projectBadge2: "Freelance Project",
                 projectDesc2: "Enterprise web application for livestock operation management and inventory tracking. Developed with <strong>MVC architecture</strong> and dynamic server-rendered views using <strong>Razor Pages</strong>.",
                 projectStack2: "C# 12, .NET 8.0, MVC Pattern, Razor Pages, Entity Framework Core 8, SQL Server, Bootstrap.",
@@ -366,6 +372,11 @@
                                 <p class="project-narrative">${d.projectDesc1}</p>
                                 <div class="stack-box">
                                     <strong>Stack:</strong> ${d.projectStack1}
+                                </div>
+                                <div style="margin-top: 8px; text-align: right;">
+                                    <a href="https://test.donnabotanica.com.py" target="_blank" class="project-link-btn">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> ${d.projectLinkText1}
+                                    </a>
                                 </div>
                             </div>
 
