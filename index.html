@@ -39,14 +39,14 @@
         .nav-links a:hover { color: var(--text); }
 
         /* Hero */
-        .hero { padding: 80px 0 64px; background: radial-gradient(ellipse at 80% 0%, rgba(167,139,250,.16), transparent 55%), radial-gradient(ellipse at 0% 30%, rgba(56,189,248,.12), transparent 50%); }
+        .hero { padding: 48px 0 40px; background: radial-gradient(ellipse at 80% 0%, rgba(167,139,250,.16), transparent 55%), radial-gradient(ellipse at 0% 30%, rgba(56,189,248,.12), transparent 50%); }
         .hero-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
         .hero-top > * { min-width: 0; }
         .eyebrow { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; color: var(--accent); font-size: 0.9rem; letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); margin: 12px 0 10px; }
-        .hero .role { font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
-        .hero p.bio { color: var(--muted); font-size: 1.05rem; max-width: 600px; }
-        .hero .meta { display: flex; flex-wrap: wrap; gap: 16px; margin: 20px 0 28px; color: var(--muted); font-size: 0.92rem; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 2.9rem); margin: 10px 0 8px; }
+        .hero .role { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 14px; }
+        .hero p.bio { color: var(--muted); font-size: 1rem; max-width: 560px; }
+        .hero .meta { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 22px; color: var(--muted); font-size: 0.92rem; }
         .hero .meta i { color: var(--accent); margin-right: 6px; }
         .btns { display: flex; flex-wrap: wrap; gap: 12px; }
         .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid transparent; transition: transform .15s, background .2s, border-color .2s; }
@@ -55,15 +55,20 @@
         .btn-java { background: var(--java); color: #2a1305; }
         .btn-ghost { border-color: var(--border); color: var(--text); background: var(--surface); }
         .btn-ghost:hover { border-color: var(--accent); }
-        .photo { justify-self: center; position: relative; width: min(320px, 80vw); aspect-ratio: 1; }
-        .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--accent); box-shadow: 0 20px 60px rgba(56,189,248,.25); }
-        .photo .fallback { display: none; width: 100%; height: 100%; border-radius: 50%; background: linear-gradient(135deg, #0284c7, #6d28d9); align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 700; }
+        /* Composición de tecnologías flotando alrededor de la foto */
+        .tech-art { justify-self: center; position: relative; width: min(360px, 100%); aspect-ratio: 1; }
+        .tech-art .ring { position: absolute; inset: 14%; border-radius: 34%; transform: rotate(45deg); background: linear-gradient(135deg, rgba(56,189,248,.18), rgba(167,139,250,.10)); border: 1px solid rgba(56,189,248,.25); animation: spin 40s linear infinite; }
+        .tech-art .ring.r2 { inset: 4%; border-radius: 40%; background: none; border-color: rgba(167,139,250,.22); animation-duration: 60s; animation-direction: reverse; }
+        .tech-art .me { position: absolute; left: 50%; top: 50%; width: 40%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; overflow: hidden; border: 4px solid var(--accent); box-shadow: 0 16px 50px rgba(56,189,248,.3); background: linear-gradient(135deg, #0284c7, #6d28d9); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 700; }
+        .tech-art .me img { width: 100%; height: 100%; object-fit: cover; }
+        .tile { position: absolute; width: 17%; aspect-ratio: 1; border-radius: 22%; box-shadow: 0 10px 28px rgba(0,0,0,.45); animation: float 6s ease-in-out infinite; }
+        .tile img { width: 100%; height: 100%; display: block; border-radius: 22%; }
+        .tile.db { background: #242938; display: flex; align-items: center; justify-content: center; color: #e2e8f0; font-size: 1.6rem; }
+        .tile.db i { color: #ef4444; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes spin { to { transform: rotate(405deg); } }
+        @media (prefers-reduced-motion: reduce) { .tile, .tech-art .ring { animation: none; } }
 
-        /* Estadísticas */
-        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
-        .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
-        .stat b { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 2rem; color: var(--accent-2); }
-        .stat span { color: var(--muted); font-size: 0.93rem; }
 
         /* Secciones */
         section { padding: 72px 0; }
@@ -112,7 +117,6 @@
         .cv-card.java { border-top-color: var(--java); }
         .cv-card h3 { font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
         .cv-card p { color: var(--muted); }
-        .note { color: var(--muted); font-size: 0.9rem; margin-top: 18px; }
 
         /* Contacto */
         .contact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -126,14 +130,14 @@
 
         @media (max-width: 900px) {
             .hero-top { grid-template-columns: 1fr; }
-            .photo { grid-row: 1; width: 200px; }
+            .tech-art { grid-row: 1; width: min(300px, 100%); }
             .projects, .skills { grid-template-columns: 1fr; }
             .contact { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
-            .stats, .modules, .cvs, .contact { grid-template-columns: 1fr; }
-            .hero { padding-top: 48px; }
+            .modules, .cvs, .contact { grid-template-columns: 1fr; }
+            .hero { padding-top: 32px; }
             section { padding: 56px 0; }
         }
     </style>
@@ -170,16 +174,18 @@
                 <a class="btn btn-ghost" href="#contacto"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
             </div>
         </div>
-        <div class="photo">
-            <img src="profile.jpg" alt="Foto de Nelson Tobias Parra Moreno" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="fallback">NP</div>
-        </div>
-    </div>
-    <div class="wrap">
-        <div class="stats">
-            <div class="stat"><b>+1 año</b><span>de experiencia profesional en un ERP empresarial</span></div>
-            <div class="stat"><b>3 monedas</b><span>Guaraní, Dólar y Real en caja, ventas, préstamos y órdenes de servicio</span></div>
-            <div class="stat"><b>2 sistemas</b><span>propios en producción, desplegados con Docker</span></div>
+        <div class="tech-art" aria-label="Tecnologías: C#, .NET, Java, Spring, React, TypeScript, Docker y SQL Server">
+            <div class="ring r2"></div>
+            <div class="ring"></div>
+            <div class="me"><img src="profile.jpg" alt="Foto de Nelson Tobias Parra Moreno" onerror="this.parentElement.textContent='NP'"></div>
+            <div class="tile" style="left:41.6%;top:2.1%;animation-delay:0s"><img src="https://skillicons.dev/icons?i=cs" alt="C#" loading="lazy"></div>
+            <div class="tile" style="left:69.5%;top:13.7%;animation-delay:-1s"><img src="https://skillicons.dev/icons?i=dotnet" alt=".NET" loading="lazy"></div>
+            <div class="tile" style="left:81%;top:41.6%;animation-delay:-2s"><img src="https://skillicons.dev/icons?i=java" alt="Java" loading="lazy"></div>
+            <div class="tile" style="left:69.5%;top:69.5%;animation-delay:-3s"><img src="https://skillicons.dev/icons?i=spring" alt="Spring" loading="lazy"></div>
+            <div class="tile" style="left:41.6%;top:81%;animation-delay:-4s"><img src="https://skillicons.dev/icons?i=react" alt="React" loading="lazy"></div>
+            <div class="tile" style="left:13.7%;top:69.5%;animation-delay:-5s"><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" loading="lazy"></div>
+            <div class="tile" style="left:2.1%;top:41.6%;animation-delay:-1.5s"><img src="https://skillicons.dev/icons?i=docker" alt="Docker" loading="lazy"></div>
+            <div class="tile db" style="left:13.7%;top:13.7%;animation-delay:-2.5s" title="SQL Server"><i class="fa-solid fa-database"></i></div>
         </div>
     </div>
 </header>
@@ -208,8 +214,8 @@
             <div class="modules">
                 <div class="module"><h4>Caja & POS (Multimoneda)</h4><p>Saldos separados en Gs, USD y BRL, arqueo y cierre por moneda, sangrías y aportes con validación de saldo, y pagos mixtos.</p></div>
                 <div class="module"><h4>Préstamos & Financiero</h4><p>Préstamos en cualquier moneda, aprobación, desembolsos y cobro de cuotas integrados con la caja.</p></div>
-                <div class="module"><h4>Órdenes de Servicio</h4><p>Diseñado desde cero: conversión de precios por cotización, cobro multimoneda e importación masiva de datos históricos.</p></div>
-                <div class="module"><h4>Agrícola (SISAGRO)</h4><p>Automatización de cálculos y reportes analíticos para el sector agroindustrial.</p></div>
+                <div class="module"><h4>Órdenes de Servicio</h4><p>Diseñado desde cero, con conversión de precios por cotización y cobro multimoneda desde la caja.</p></div>
+                <div class="module"><h4>Agrícola (SISAGRO)</h4><p>Desarrollo en sistemas agroindustriales.</p></div>
             </div>
         </div>
     </div>
@@ -236,7 +242,6 @@
                 </div>
                 <div class="links">
                     <a href="https://test.donnabotanica.com.py" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver demo</a>
-                    <a href="https://github.com/Xbox-hash/terra-macetas" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Código</a>
                 </div>
             </article>
 
@@ -280,7 +285,7 @@
         <div class="skills">
             <div class="card">
                 <h3><i class="fa-solid fa-code"></i> Backend</h3>
-                <div class="chips"><span class="chip">C# 12</span><span class="chip">.NET 8 / .NET 6</span><span class="chip">ASP.NET Core</span><span class="chip">EF Core</span><span class="chip">Dapper</span><span class="chip">LINQ</span><span class="chip">APIs RESTful</span><span class="chip">Java</span><span class="chip">Spring</span></div>
+                <div class="chips"><span class="chip">C# 12</span><span class="chip">.NET 8 / .NET 6</span><span class="chip">ASP.NET Core</span><span class="chip">EF Core</span><span class="chip">APIs RESTful</span><span class="chip">Java</span><span class="chip">Spring</span></div>
             </div>
             <div class="card">
                 <h3><i class="fa-solid fa-database"></i> Bases de datos</h3>
@@ -328,7 +333,6 @@
                 </div>
             </div>
         </div>
-        <p class="note"><i class="fa-solid fa-circle-info"></i> Los dos CVs están en español e inglés. Para descargarlos en PDF, usa el botón "Imprimir CV / Guardar PDF" dentro de cada uno.</p>
     </div>
 </section>
 
