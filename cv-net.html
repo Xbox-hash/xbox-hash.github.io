@@ -142,7 +142,7 @@
         .skills-group { margin-bottom: 16px; }
         .skills-group h4 { font-size: 0.9rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
         .skills-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-        .pill { background: #e2e8f0; color: var(--secondary); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .pill { background: #e2e8f0; color: var(--secondary); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
         .pill-highlight { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
         .pill-ai { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
 
@@ -210,7 +210,10 @@
             <button class="lang-btn active" onclick="setLanguage('es')" id="btnEs">🇪🇸 Español</button>
             <button class="lang-btn" onclick="setLanguage('en')" id="btnEn">🇺🇸 English</button>
         </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <a href="index.html" class="other-cv-link" style="color:#334155;background:#f1f5f9;border-color:#e2e8f0"><i class="fa-solid fa-arrow-left"></i> Portfolio</a>
         <a href="cv-java.html" class="other-cv-link"><i class="fa-brands fa-java"></i> Ver CV Especialista Java →</a>
+        </div>
     </div>
 
     <button class="btn-print" onclick="window.print()" id="btnPrint"><i class="fa-solid fa-file-pdf"></i> Imprimir CV / Guardar PDF</button>
@@ -231,22 +234,23 @@
                 company: "Sisprime Sistemas",
                 jobPeriod: "Jun 2025 – Presente (1+ Año)",
                 bullets: [
-                    "Desarrollo Full Stack, mantenimiento y refactorización de módulos ERP empresariales utilizando <strong>C#, .NET 8, patrón MVC y bases de datos relacionales (SQL Server, PostgreSQL)</strong>.",
-                    "Aplicación de <strong>Clean Architecture, Principios SOLID y buenas prácticas de código limpio (Clean Code)</strong> en arquitecturas multicapa.",
-                    "Construcción de vistas e interfaces dinámicas utilizando <strong>ASP.NET Core Razor Pages / MVC</strong> y desarrollo de <strong>APIs RESTful</strong>.",
-                    "Integración y uso estratégico de <strong>herramientas de Inteligencia Artificial</strong> para optimización de lógica, depuración y aceleración del desarrollo."
+                    "Desarrollo Full Stack, mantenimiento y refactorización de módulos de un ERP empresarial con <strong>C#, ASP.NET Core 6 MVC, Entity Framework Core, Dapper y SQL Server</strong>.",
+                    "Implementación de <strong>control multimoneda (Guaraní, Dólar y Real)</strong> en caja, ventas PDV, préstamos y órdenes de servicio: saldos por moneda, conversión según la cotización vigente y pagos mixtos en varias monedas.",
+                    "Lógica transaccional con <strong>transacciones EF Core (commit/rollback)</strong> para mantener consistentes la caja, las ventas y las cuentas por cobrar.",
+                    "Aplicación de <strong>principios SOLID</strong> y buenas prácticas de código limpio en una arquitectura <strong>MVC en capas</strong>.",
+                    "Uso de herramientas de <strong>IA (Claude Code, GitHub Copilot)</strong> para depurar, refactorizar y desarrollar más rápido."
                 ],
-                modulesTitle: "Módulos Desarrollados & Implementados:",
+                modulesTitle: "Módulos Desarrollados:",
                 modules: [
-                    { title: "Módulo Préstamos & Financiero", desc: "Lógica de desembolsos, planes de pagos e integración transaccional con caja en .NET 8." },
-                    { title: "Módulo Órdenes de Servicio", desc: "Diseño desde cero e importación masiva de datos históricos optimizada con EF Core." },
-                    { title: "Módulo Caja & POS (Ventas)", desc: "Modernización y reescritura de código legado para optimizar rendimiento transaccional." },
-                    { title: "Módulo Agrícola (SISAGRO)", desc: "Automatización de cálculos y reportes analíticos para el sector agroindustrial." }
+                    { title: "Caja & POS (Multimoneda)", desc: "Caja con saldos separados en Gs, USD y BRL, arqueo y cierre por moneda, sangrías y aportes con validación de saldo, y pagos mixtos." },
+                    { title: "Préstamos & Financiero", desc: "Préstamos en cualquier moneda, aprobación, desembolsos y cobro de cuotas integrados con la caja." },
+                    { title: "Órdenes de Servicio", desc: "Diseñado desde cero, conversión de precios por cotización, cobro multimoneda e importación masiva de datos históricos." },
+                    { title: "Agrícola (SISAGRO)", desc: "Automatización de cálculos y reportes analíticos para el sector agroindustrial." }
                 ],
                 projectsSectionTitle: "Proyectos Destacados (.NET)",
                 projectBadge1: "Proyecto Destacado",
                 projectDesc1: "Sistema web de catálogo comercial de macetas con carrito de compras, pedidos automatizados vía WhatsApp y panel administrativo integral. Diseñado bajo <strong>arquitectura de APIs RESTful</strong> documentadas con <strong>Swagger</strong>.",
-                projectStack1: "React, TypeScript, ASP.NET Core 8 Web API, RESTful, Swagger, EF Core, SQL Server, Bootstrap.",
+                projectStack1: "React, TypeScript, Tailwind CSS, ASP.NET Core 8 Web API, RESTful, Swagger, EF Core, SQL Server.",
                 projectLinkText1: "Ver Demo Online (test.donnabotanica.com.py) →",
                 projectBadge2: "Proyecto Freelance",
                 projectDesc2: "Aplicación web empresarial para la administración operativa, control ganadero y trazabilidad de stock. Desarrollado con arquitectura <strong>MVC</strong> y vistas dinámicas con <strong>Razor Pages</strong>.",
@@ -256,6 +260,7 @@
                 aiSkillsTitle: "Herramientas de IA",
                 archSkillsTitle: "Metodologías & Arquitectura",
                 dbSkillsTitle: "Bases de Datos",
+                sqlTxPill: "Transacciones SQL",
                 frontSkillsTitle: "Frontend & Herramientas",
                 langSectionTitle: "Idiomas",
                 languages: [
@@ -275,22 +280,23 @@
                 company: "Sisprime Sistemas",
                 jobPeriod: "Jun 2025 – Present (1+ Year)",
                 bullets: [
-                    "Full Stack development, maintenance, and refactoring of enterprise ERP modules using <strong>C#, .NET 8, MVC architecture, and relational databases (SQL Server, PostgreSQL)</strong>.",
-                    "Implementation of <strong>Clean Architecture, SOLID principles, and Clean Code standards</strong> across multi-tier enterprise systems.",
-                    "Building dynamic and intuitive interfaces using <strong>ASP.NET Core Razor Pages / MVC</strong> and developing robust <strong>RESTful APIs</strong>.",
-                    "Strategic integration of <strong>AI-assisted tools</strong> to accelerate code generation, debugging, and feature delivery."
+                    "Full Stack development, maintenance, and refactoring of enterprise ERP modules with <strong>C#, ASP.NET Core 6 MVC, Entity Framework Core, Dapper, and SQL Server</strong>.",
+                    "Implemented <strong>multi-currency support (Guarani, US Dollar, and Brazilian Real)</strong> across cash register, POS sales, loans, and service orders: per-currency balances, conversion at the current exchange rate, and mixed-currency payments.",
+                    "Transactional logic using <strong>EF Core transactions (commit/rollback)</strong> to keep cash register, sales, and accounts receivable consistent.",
+                    "Applied <strong>SOLID principles</strong> and clean code practices within a <strong>layered MVC architecture</strong>.",
+                    "Used <strong>AI tools (Claude Code, GitHub Copilot)</strong> to debug, refactor, and develop faster."
                 ],
-                modulesTitle: "Key Modules Developed & Implemented:",
+                modulesTitle: "Modules Developed:",
                 modules: [
-                    { title: "Loans & Financial Module", desc: "Disbursement logic, payment amortization schedules, and transactional POS integration in .NET 8." },
-                    { title: "Service Orders Module", desc: "Engineered from scratch with bulk legacy data migration optimized using EF Core." },
-                    { title: "Cash Register & POS Module", desc: "Modernization and refactoring of legacy code to optimize transactional throughput." },
-                    { title: "Agroindustrial Module (SISAGRO)", desc: "Automated calculations and reporting analytics tailored for the agribusiness sector." }
+                    { title: "Cash Register & POS (Multi-currency)", desc: "Separate balances in Gs, USD, and BRL, per-currency cash count and closing, withdrawals and deposits with balance validation, and mixed payments." },
+                    { title: "Loans & Financial", desc: "Loans in any currency, approval, disbursements, and installment collection integrated with the cash register." },
+                    { title: "Service Orders", desc: "Built from scratch: price conversion by exchange rate, multi-currency collection, and bulk import of historical data." },
+                    { title: "Agribusiness (SISAGRO)", desc: "Automated calculations and analytical reports for the agribusiness sector." }
                 ],
                 projectsSectionTitle: "Featured Projects (.NET)",
                 projectBadge1: "Featured Project",
                 projectDesc1: "Commercial e-commerce web platform for plant pots featuring shopping cart, automated WhatsApp order processing, and comprehensive admin dashboard. Built on a <strong>RESTful API architecture</strong> documented with <strong>Swagger</strong>.",
-                projectStack1: "React, TypeScript, ASP.NET Core 8 Web API, RESTful, Swagger, EF Core, SQL Server, Bootstrap.",
+                projectStack1: "React, TypeScript, Tailwind CSS, ASP.NET Core 8 Web API, RESTful, Swagger, EF Core, SQL Server.",
                 projectLinkText1: "View Live Demo (test.donnabotanica.com.py) →",
                 projectBadge2: "Freelance Project",
                 projectDesc2: "Enterprise web application for livestock operation management and inventory tracking. Developed with <strong>MVC architecture</strong> and dynamic server-rendered views using <strong>Razor Pages</strong>.",
@@ -300,6 +306,7 @@
                 aiSkillsTitle: "AI-Assisted Tools",
                 archSkillsTitle: "Architecture & Practices",
                 dbSkillsTitle: "Databases",
+                sqlTxPill: "SQL Transactions",
                 frontSkillsTitle: "Frontend & Tools",
                 langSectionTitle: "Languages",
                 languages: [
@@ -330,7 +337,7 @@
                             <span><i class="fa-solid fa-envelope"></i> nelsontobiasparramoreno745@gmail.com</span>
                             <span><i class="fa-solid fa-phone"></i> +595 982 615140</span>
                             <span><i class="fa-solid fa-location-dot"></i> ${d.location}</span>
-                            <a href="https://github.com/xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox_hash</a>
+                            <a href="https://github.com/Xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox-hash</a>
                             <a href="https://www.linkedin.com/in/tobias-parra-moreno-074083357" target="_blank"><i class="fa-brands fa-linkedin"></i> Tobias Parra</a>
                         </div>
                     </div>
@@ -400,6 +407,7 @@
                                     <span class="pill pill-highlight">C# 12</span>
                                     <span class="pill pill-highlight">.NET 8.0</span>
                                     <span class="pill pill-highlight">ASP.NET Core</span>
+                                    <span class="pill pill-highlight">ASP.NET Core 6 / .NET 6</span>
                                     <span class="pill pill-highlight">APIs RESTful</span>
                                     <span class="pill pill-highlight">EF Core 8</span>
                                     <span class="pill pill-highlight">Razor Pages</span>
@@ -435,6 +443,7 @@
                                     <span class="pill">SQL Server</span>
                                     <span class="pill">PostgreSQL</span>
                                     <span class="pill">MySQL</span>
+                                    <span class="pill">${d.sqlTxPill}</span>
                                 </div>
                             </div>
 

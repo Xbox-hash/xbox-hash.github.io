@@ -198,7 +198,10 @@
             <button class="lang-btn active" onclick="setLanguage('es')" id="btnEs">🇪🇸 Español</button>
             <button class="lang-btn" onclick="setLanguage('en')" id="btnEn">🇺🇸 English</button>
         </div>
-        <a href="index.html" class="other-cv-link"><i class="fa-brands fa-microsoft"></i> Ver CV Especialista .NET →</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <a href="index.html" class="other-cv-link" style="color:#334155;background:#f1f5f9;border-color:#e2e8f0"><i class="fa-solid fa-arrow-left"></i> Portfolio</a>
+        <a href="cv-net.html" class="other-cv-link"><i class="fa-brands fa-microsoft"></i> Ver CV Especialista .NET →</a>
+        </div>
     </div>
 
     <button class="btn-print" onclick="window.print()" id="btnPrint"><i class="fa-solid fa-file-pdf"></i> Imprimir CV / Guardar PDF</button>
@@ -236,7 +239,7 @@
                 projectDesc1: "Sistema transaccional de caja, tesorería y punto de venta empresarial diseñado bajo principios de <strong>Clean Architecture</strong>. Estructurado en capas independientes (Domain, Application, Infrastructure y Presentation) para permitir alta concurrencia, tolerancia a fallos y desacoplamiento.",
                 projectStack1: "Arquitectura Limpia, APIs RESTful, Modelado Relacional (PostgreSQL / SQL Server), Docker & Docker Compose.",
                 projectInfra1: "Contenedores <strong>Docker</strong> desplegados y operativos en servidor VPS <strong>Contabo</strong>.",
-                projectLinkText1: "Ver Sistema en Producción (Servidor Contabo) →",
+                projectLinkText1: "Ver Sistema en Producción (zentropos.app) →",
                 skillsSectionTitle: "Habilidades Técnicas",
                 specialSkillsTitle: "Especialidad Java",
                 devopsSkillsTitle: "Infraestructura & DevOps",
@@ -278,7 +281,7 @@
                 projectDesc1: "Enterprise Point of Sale, cash register, and treasury management system designed under strict <strong>Clean Architecture</strong>. Separated into independent layers (Domain, Application, Infrastructure, Presentation) for high concurrency, fault tolerance, and modularity.",
                 projectStack1: "Clean Architecture, RESTful APIs, Relational Modeling (PostgreSQL / SQL Server), Docker & Docker Compose.",
                 projectInfra1: "<strong>Docker</strong> containers deployed and operating on a <strong>Contabo VPS</strong> server.",
-                projectLinkText1: "View Live System (Contabo VPS Server) →",
+                projectLinkText1: "View Live System (zentropos.app) →",
                 skillsSectionTitle: "Technical Skills",
                 specialSkillsTitle: "Java Specialization",
                 devopsSkillsTitle: "Infrastructure & DevOps",
@@ -314,7 +317,7 @@
                             <span><i class="fa-solid fa-envelope"></i> nelsontobiasparramoreno745@gmail.com</span>
                             <span><i class="fa-solid fa-phone"></i> +595 982 615140</span>
                             <span><i class="fa-solid fa-location-dot"></i> ${d.location}</span>
-                            <a href="https://github.com/xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox_hash</a>
+                            <a href="https://github.com/Xbox-hash" target="_blank"><i class="fa-brands fa-github"></i> @Xbox-hash</a>
                             <a href="https://www.linkedin.com/in/tobias-parra-moreno-074083357" target="_blank"><i class="fa-brands fa-linkedin"></i> Tobias Parra</a>
                         </div>
                     </div>
@@ -361,7 +364,7 @@
                                     <strong>${lang === 'es' ? 'Infraestructura & Despliegue:' : 'Infrastructure & Deployment:'}</strong> ${d.projectInfra1}
                                 </div>
                                 <div style="margin-top: 8px; text-align: right;">
-                                    <a href="http://86.48.21.7:4000" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ea580c; color: #ffffff; padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; text-decoration: none;">
+                                    <a href="https://zentropos.app" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ea580c; color: #ffffff; padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; text-decoration: none;">
                                         <i class="fa-solid fa-server"></i> ${d.projectLinkText1}
                                     </a>
                                 </div>
