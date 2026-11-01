@@ -111,13 +111,6 @@
         .skills h3 { font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
         .skills h3 i { color: var(--accent); }
 
-        /* CV */
-        .cvs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .cv-card { display: flex; flex-direction: column; gap: 14px; border-top: 4px solid var(--accent); }
-        .cv-card.java { border-top-color: var(--java); }
-        .cv-card h3 { font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .cv-card p { color: var(--muted); }
-
         /* Contacto */
         .contact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
         .contact a { display: flex; flex-direction: column; gap: 6px; text-decoration: none; transition: border-color .2s, transform .15s; }
@@ -136,7 +129,7 @@
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
-            .modules, .cvs, .contact { grid-template-columns: 1fr; }
+            .modules, .contact { grid-template-columns: 1fr; }
             .hero { padding-top: 32px; }
             section { padding: 56px 0; }
         }
@@ -151,7 +144,6 @@
             <li><a href="#experiencia">Experiencia</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#cv">CV</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </div>
@@ -214,7 +206,7 @@
             <div class="modules">
                 <div class="module"><h4>Caja & POS (Multimoneda)</h4><p>Saldos separados en Gs, USD y BRL, arqueo y cierre por moneda, sangrías y aportes con validación de saldo, y pagos mixtos.</p></div>
                 <div class="module"><h4>Préstamos & Financiero</h4><p>Préstamos en cualquier moneda, aprobación, desembolsos y cobro de cuotas integrados con la caja.</p></div>
-                <div class="module"><h4>Órdenes de Servicio</h4><p>Diseñado desde cero, con conversión de precios por cotización y cobro multimoneda desde la caja.</p></div>
+                <div class="module"><h4>Órdenes de Servicio</h4><p>Órdenes de servicio para talleres, con cobro multimoneda desde la caja.</p></div>
                 <div class="module"><h4>Agrícola (SISAGRO)</h4><p>Desarrollo en sistemas agroindustriales.</p></div>
             </div>
         </div>
@@ -311,32 +303,7 @@
     </div>
 </section>
 
-<section id="cv">
-    <div class="wrap">
-        <div class="section-head">
-            <p class="eyebrow">// curriculum</p>
-            <h2>Curriculum vitae</h2>
-        </div>
-        <div class="cvs">
-            <div class="card cv-card">
-                <h3><i class="fa-brands fa-microsoft" style="color:var(--accent)"></i> CV Desarrollador C# .NET</h3>
-                <p>Mi experiencia en Sisprime Sistemas con ASP.NET Core y SQL Server, y mis proyectos en .NET.</p>
-                <div class="btns">
-                    <a class="btn btn-primary" href="cv-net.html"><i class="fa-solid fa-eye"></i> Ver CV .NET</a>
-                </div>
-            </div>
-            <div class="card cv-card java">
-                <h3><i class="fa-brands fa-java" style="color:var(--java)"></i> CV Desarrollador Java</h3>
-                <p>Mi perfil en el ecosistema Java y el sistema ZentroPOS.</p>
-                <div class="btns">
-                    <a class="btn btn-java" href="cv-java.html"><i class="fa-solid fa-eye"></i> Ver CV Java</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="alt" id="contacto">
+<section id="contacto">
     <div class="wrap">
         <div class="section-head">
             <p class="eyebrow">// contacto</p>
